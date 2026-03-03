@@ -1,0 +1,125 @@
+info:
+  name: Cập nhật thông tin tài khoản
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Customers/UpdateAccountInfo"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "41"
+  body:
+    type: multipart-form
+    data:
+      - name: FirstName
+        type: text
+        value: Hậu1
+        disabled: true
+      - name: LastName
+        type: text
+        value: Nguyễn
+        disabled: true
+      - name: Gender
+        type: text
+        value: "1"
+        description: "0 | 1 | 2 (0: nữ, 1: nam, 2: khác)"
+        disabled: true
+      - name: DateOfBirth
+        type: text
+        value: 0001-01-01
+      - name: Email
+        type: text
+        value: hectorphvn@gmail.com
+        disabled: true
+      - name: PhoneNumber
+        type: text
+        value: "0967900152"
+        disabled: true
+      - name: CountryCode
+        type: text
+        value: VN
+        disabled: true
+      - name: CountryName
+        type: text
+        value: Việt Nam
+        description: "Tên quốc gia "
+        disabled: true
+      - name: CityCode
+        type: text
+        value: "71"
+        disabled: true
+      - name: CityName
+        type: text
+        value: TP. Hồ chí minh
+        disabled: true
+      - name: Address
+        type: text
+        value: 15 Nguyễn Bỉnh Khiêm, Tân Định
+        description: "Địa chỉ chi tiết "
+        disabled: true
+      - name: Relationships[0].FirstName
+        type: text
+        value: Đạt1
+        disabled: true
+      - name: Relationships[0].LastName
+        type: text
+        value: Trần
+        disabled: true
+      - name: Relationships[0].Gender
+        type: text
+        value: "1"
+        disabled: true
+      - name: Relationships[0].DateOfBirth
+        type: text
+        value: 1998-05-05
+        disabled: true
+      - name: Relationships[0].Note
+        type: text
+        value: "Ghi chú "
+        disabled: true
+      - name: Relationships[0].RelationshipType
+        type: text
+        value: Em trai
+        disabled: true
+      - name: Id
+        type: text
+        value: "41"
+      - name: Title
+        type: text
+        value: ""
+        description: Danh xưng
+        disabled: true
+      - name: NationalId
+        type: text
+        value: ""
+        disabled: true
+      - name: PassportNumber
+        type: text
+        value: ""
+        disabled: true
+      - name: ZipCode
+        type: text
+        value: ""
+        disabled: true
+      - name: DistrictName
+        type: text
+        value: ""
+        disabled: true
+      - name: DistrictCode
+        type: text
+        value: ""
+        disabled: true
+      - name: Account
+        type: text
+        value: haukhachhang1
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

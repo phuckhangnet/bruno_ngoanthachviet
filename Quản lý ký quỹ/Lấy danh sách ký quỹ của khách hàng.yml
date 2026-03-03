@@ -1,0 +1,28 @@
+info:
+  name: Lấy danh sách ký quỹ của khách hàng
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Deposit/Sop/GetDepositList"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "FromDate":"2025-11-27",
+          "ToDate":"2025-12-30",
+          "CustomerId": 41
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

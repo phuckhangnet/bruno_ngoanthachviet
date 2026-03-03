@@ -1,0 +1,21 @@
+info:
+  name: Lấy danh mục template gửi email
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/Common/GetTemplateEmails"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

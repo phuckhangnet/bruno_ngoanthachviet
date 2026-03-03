@@ -1,0 +1,39 @@
+info:
+  name: Gui Vận đơn
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{url}}/Order/GuiDonVanChuyen"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "iddonhang": 64,
+          "manhavanchuyen": "GHTK",
+          "mienship": 0,
+          "tienthuho": 0,
+          "ngaygiaohang": "2025-09-29",
+          "ghichu": "Không cho xem hàng, Không cho thử hàng/ đồng kiểm",
+          "trigiakhaigia": 900000,
+          "sanpham": {
+              "0": {
+                  "name": "Đá Phong Thủy",
+                  "weight": 0.3
+              }
+          },
+          "devo": 0,
+          "khoiluong": 300,
+          "diachicap4": "Khác"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

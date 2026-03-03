@@ -1,0 +1,28 @@
+info:
+  name: Danh sách chi tiết giao dịch ký quỹ
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Deposit/Customer/GetTransactionDetailByDate"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "fronDate":"2025-11-02",
+          "toDate":"2025-11-04",
+          "transactionType": "nap_tien" //null: lấy tất cả | nap_tien, rut_tien, thanh_toan, da_ky_quy, hoan_tien,
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

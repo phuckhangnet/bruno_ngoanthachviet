@@ -1,0 +1,165 @@
+info:
+  name: Thông báo nhân viên
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### **Tài liệu API Socket Notification (SignalR)**
+
+    > Url: **/hubs/notification** 
+      
+
+    Key 1:
+
+    **ReceiveNotification: thông báo mới**
+
+    Template type:
+
+    ``` csharp
+    {
+         // Nạp tiền ký quỹ
+        public const string CustomerDepositMargin = "CustomerDepositMargin";
+        // Rút tiền
+        public const string CustomerWithdraw = "CustomerWithdraw";
+        // Đặt hàng
+        public const string CustomerPlaceOrder = "CustomerPlaceOrder";
+        // Đăng ký tài khoản
+        public const string CustomerRegister = "CustomerRegister";
+        // Sự kiện mới
+        public const string EventCreate = "EventCreate";
+    }
+
+     ```
+
+    Response:
+
+    | **Trường** | **Kiểu dữ liệu** | **Mô tả** | **Vai trò chính** |  
+    | `title` | `string` | Tiêu đề thông báo. | |  
+    | `body` | `string` | Nội dung ngắn của thông báo. | |  
+    | **`templateType`** | `string` | **Loại thông báo** (VD: `Appointment`, `OrderConfirmed`). | **Phân loại** |  
+    | `data` | `string` | Chuỗi JSON chứa dữ liệu chi tiết (ID sự kiện, Mã code, v.v.). | |
+
+    _**Data thông báo nạp tiền:**_
+
+    **(CustomerDepositMargin) - Nạp tiền**
+
+    Nội dung: Khách hàng Nguyễn Hậu1 vừa yêu cầu xác nhận
+
+    ``` jsx
+    {
+      "DepositId": 139,
+      "TransactionCode": "TRN-20251202164617-CSNEPS",
+      "Amount": 500000000,
+      "Status": "chua_xac_nhan",
+      "TransactionTime": "2025-12-02T16:46:17.9566667",
+      "TransferImageUrl": "/ntv/depositCustomer/139.webp"
+    }
+
+     ```
+
+    **Data thoong baos rut tiền**
+
+    **(CustomerWithdraw) - Rút tiền**
+
+    Nội dung: Khách hàng Nguyễn Hậu1 vừa yêu cầu xác nhận
+
+    ```
+    {
+      "TransactionCode": "TRN-20251202170811-70UQ32",
+      "TransactionDate": "2025-12-02T10:08:11.910851Z",
+      "Amount": 100000
+    }
+
+     ```
+
+    **Data tao don**
+
+    **(CustomerPlaceOrder) - Đặt hàng**
+
+    Nội dung: Khách hàng Nguyễn Hậu1 vừa đặt đơn hàng mới
+
+    ```
+    {
+      "OrderId": 145,
+      "CustomerName": "Nguyễn Hậu1",
+      "OrderCode": "NTV00000145",
+      "OrderDate": "27/10/2025 10:10",
+      "NumberOfProducts": 2,
+      "OrderValue": 20040000
+    }
+
+     ```
+
+    **Data khách hàng đăng ký**
+
+    **(CustomerRegister) - Đăng ký tài khoản**
+
+    Nội dung: Khách hàng Phạm nam vừa đăng ký tài khoản.
+
+    ```
+    {
+      "CustomerName": "Phạm nam",
+      "CustomerCode": "CUS00000044",
+      "CustomerAccount": "hauphvnkhanghang2",
+      "CustomerPhone": "hauphvnkhanghang2",
+      "RegistrationDate": "08:41:03 03/12/2025",
+      "CustomerDob": ""
+    }
+
+     ```
+
+    **Data sự kiện**
+
+    **(EventCreate) - Sự kiện mới**
+
+    Nội dung: Phiên đấu giá Hau test noti 2 đã kết thúc.
+
+    ```
+    {
+      "AuctionTitle": "Hau  test noti 2",
+       "AuctionId": 444,
+      "AuctionCode": "AUC-0000000649",
+       "StartTime": "09:44:00 05/12/2025",
+      "EndTime": "09:47:00 05/12/2025",
+      "TotalProducts": 1,
+      "TotalPrice": 11000000,
+      "NumberOfParticipants": 0,
+      "FinalPrice": 11000000,
+      "AuctionResponsible": "Trương Văn Vũ",
+      "Type": "AuctionItemEnded"
+    }
+
+     ```
+
+    **(EventCreate) - Sự kiện mới**
+
+    Nội dung: Phiên đấu giá Hau test noti 2 sẽ bắt đầu.
+
+    ```
+    {
+      "AuctionTitle": "Hau  test noti 5",
+       "AuctionId": 444,
+      "AuctionCode": "AUC-0000000670",
+      "StartTime": "09:44:00 05/12/2025",
+      "EndTime": "09:47:00 05/12/2025",
+      "TotalItems": 2,
+      "TotalPrice": 23000000,
+      "AverageIncrementPrice": 11500000,
+      "HostName": "Trương Văn Vũ",
+      "RemainderMinutes": 30,
+      "NotificationType": "AuctionStart"
+    }
+
+     ```
+
+    **2\. UpdateNotificationBadge: khi goi api đánh dấu đã đọc tin sẽ trả về tin này cùng response api**
+
+    Response:
+
+    | **Dữ liệu nhận được** | **Kiểu dữ liệu** | **Mô tả** | **Vai trò chính** |  
+    | `unreadCount` | `Number` (Integer) | **Tổng số lượng thông báo chưa đọc** còn lại của người dùng. | Cập nhật UI Badge Count |
+  type: text/markdown

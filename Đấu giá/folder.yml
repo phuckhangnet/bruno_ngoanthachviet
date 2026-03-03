@@ -1,0 +1,62 @@
+info:
+  name: Đấu giá
+  type: folder
+  seq: 18
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    # Hướng Dẫn Kết Nối SignalR Cho Countdown Và Trạng Thái Phiên Đấu Giá
+
+    ##### App Quản lý
+
+    - Xử lý listener cho cập nhật countdown từ server.
+        
+    - Countdown client-side để UI (giảm dần mỗi giây).
+        
+    - Xử lý khi countdown = 0: Tự fetch API để cập nhật trạng thái mới nhất.
+        
+
+    1. **Màn lấy thông tin chi tiết phiên đấu giá**
+        
+
+    - API endpoint: POST {{url}}/Auction/SOP/GetDetailAuction để fetch chi tiết.
+        
+    - SignalR Hub URL: {{url_socket}}/hubs/auction
+        
+
+    Hướng Dẫn Chi Tiết
+
+    1. Fetch Chi Tiết Phiên Đấu Giá
+        
+
+    Tính toán remainingSeconds ban đầu dựa trên StartTime/EndTime và trạng thái (Scheduled, Active, Ended).  
+    Lưu ý: Thời gian từ API nên ở UTC;
+
+    1. Kết Nối SignalR
+        
+
+    Sau khi start, invoke JoinAuctionGroup với auctionId (int).
+
+    1. Listener Cho Broadcast
+        
+
+    Listener ReceiveCountdownUpdate: Nhận params (auctionId, itemId, type, seconds).  
+    Chỉ xử lý nếu khớp auctionId và itemId = 0 (cho session).  
+    Cập nhật state để sync với server (overwrite remainingSeconds).
+
+    1. Countdown Client-Side
+        
+
+    Sử dụng setInterval để giảm remainingSeconds mỗi giây.  
+    Khi <=0, dừng interval và refetch API để cập nhật trạng thái
+
+    1. Cleanup
+        
+
+    Trong useEffect return, invoke LeaveAuctionGroup và stop connection để tránh leak.
+
+    ---
+  type: text/markdown

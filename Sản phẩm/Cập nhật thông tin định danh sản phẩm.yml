@@ -1,0 +1,115 @@
+info:
+  name: Cập nhật thông tin định danh sản phẩm
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/Products/Identity/Update"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "2"
+  body:
+    type: multipart-form
+    data:
+      - name: ProductId
+        type: text
+        value: "45"
+      - name: IdentityOrganization
+        type: text
+        value: "Hậu định  danh update "
+        disabled: true
+      - name: FoundTime
+        type: text
+        value: 2000-01-01
+        disabled: true
+      - name: FoundLocation
+        type: text
+        value: vung tau
+        disabled: true
+      - name: Finder
+        type: text
+        value: Phạm văn hậu
+        disabled: true
+      - name: WebsiteLink
+        type: text
+        value: https://google.com
+      - name: VideoLink
+        type: text
+        value: https://www.facebook.com/reel/760596283234108
+        disabled: true
+      - name: Histories[0].Time
+        type: text
+        value: 2025-01-01
+        description: Thêm mới
+        disabled: true
+      - name: Histories[0].Content
+        type: text
+        value: Cột mốc đáng nhớ new
+        disabled: true
+      - name: HistoryDeleteIds
+        type: text
+        value: "1"
+        description: Xoá
+        disabled: true
+      - name: DocumentFilesText[0].File
+        type: file
+        value:
+          - postman-cloud:///1f0106dd-163b-4e60-a8b3-9831af388f09
+        description: Thêm mới
+        disabled: true
+      - name: DocumentFilesText[0].FileName
+        type: text
+        value: "Chứng nhận Tài liêụ thêm lúc cập nhật "
+        disabled: true
+      - name: IdentityId
+        type: text
+        value: "56"
+        disabled: true
+      - name: DocumentIdentityDeleteIds
+        type: text
+        value: "144"
+        disabled: true
+      - name: DocumentIdentityDeleteIds
+        type: text
+        value: "14"
+        disabled: true
+      - name: DocumentFileAudioEN
+        type: file
+        value:
+          - postman-cloud:///1f08c881-7905-4060-830f-e6b55ba310a6
+        description: Thêm mới
+        disabled: true
+      - name: DocumentFileAudioVI
+        type: file
+        value:
+          - postman-cloud:///1f08c881-778d-40c0-9262-5feb96eb1df0
+        description: "Thêm "
+        disabled: true
+      - name: IdentificationCode
+        type: text
+        value: qqqaa23
+        disabled: true
+      - name: IsNatural
+        type: text
+        value: "true"
+        disabled: true
+      - name: DocumentFileAudioCN
+        type: file
+        value:
+          - postman-cloud:///1f08c881-7905-4060-830f-e6b55ba310a6
+        disabled: true
+      - name: DocumentFileAudioJP
+        type: file
+        value:
+          - postman-cloud:///1f08c881-778d-40c0-9262-5feb96eb1df0
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

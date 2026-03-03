@@ -1,0 +1,69 @@
+info:
+  name: Tạo mới cửa hàng
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Stores/Create"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: tenCuaHang
+        type: text
+        value: Cửa hàng 1
+        description: "Required "
+      - name: image
+        type: file
+        value:
+          - postman-cloud:///1ef9272e-a129-4c70-a357-d62f79b622b1
+      - name: tenNguoiDaiDienCuaHang
+        type: text
+        value: Hậu
+      - name: diaChiCuaHang
+        type: text
+        value: ""
+        disabled: true
+      - name: diaChiWebCuaHang
+        type: text
+        value: ""
+        disabled: true
+      - name: emailCuaHang
+        type: text
+        value: ""
+        disabled: true
+      - name: maQuocGia
+        type: text
+        value: ""
+        disabled: true
+      - name: maBang
+        type: text
+        value: ""
+        disabled: true
+      - name: thanhPho
+        type: text
+        value: ""
+        disabled: true
+      - name: tenQuocGia
+        type: text
+        value: ""
+        disabled: true
+      - name: tenBang
+        type: text
+        value: ""
+        disabled: true
+      - name: idCuaHangCha
+        type: text
+        value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

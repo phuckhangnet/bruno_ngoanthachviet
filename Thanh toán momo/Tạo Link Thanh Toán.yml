@@ -1,0 +1,82 @@
+info:
+  name: Tạo Link Thanh Toán
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/ThanhToanMoMo/TaoLinkThanhToan"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "MaDoiTac": "PK01",
+          "orderInfo": "Thanh toan don hang #12345",
+          "amount": 100000,
+          "orderId": "HD12345_1",
+          "requestType": "payWithMoMo",
+          "extraData": "",
+          "storeId": "Store123",
+          "orderGroupId": "GroupABC",
+          "autoCapture": true,
+          "lang": "vi"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Endpoint này cho phép bạn tạo một liên kết thanh toán để người dùng có thể thanh toán qua ví điện tử Momo.
+
+  - **URL:** `{URL}/api/ThanhToanMoMo/TaoLinkThanhToan`
+      
+  - **Method:** `POST`
+      
+  - **Content-Type:** `application/json`
+      
+  - **API Key:** Yêu cầu `ApiKey` trong header để xác thực.
+      
+
+  #### **Request Body (JSON)**
+
+  | Trường | Kiểu dữ liệu | Bắt buộc | Mô tả |  
+  | `MaDoiTac` | `string` | Có | Mã đối tác (Partner ID) được cung cấp bởi hệ thống. |  
+  | `orderInfo` | `string` | Có | Mô tả thông tin của đơn hàng. |  
+  | `amount` | `double` | Có | Tổng số tiền cần thanh toán. |  
+  | `orderId` | `string` | Có | Mã đơn hàng duy nhất, thường được tạo dưới dạng `_`. |  
+  | `requestType` | `string` | Có | Loại yêu cầu thanh toán (ví dụ: `captureMoMoWallet`). |  
+  | `extraData` | `string` | Có | Dữ liệu bổ sung, có thể là chuỗi rỗng. |  
+  | `storeId` | `string` | Có | Mã cửa hàng. |  
+  | `orderGroupId` | `string` | Có | Mã nhóm đơn hàng (nếu có). |  
+  | `autoCapture` | `bool` | Có | `true` để tự động thu tiền sau khi thanh toán thành công, `false` nếu muốn giữ trạng thái chờ. |  
+  | `lang` | `string` | Có | Ngôn ngữ hiển thị trên trang thanh toán (ví dụ: `vi`, `en`). |
+
+  #### **Response (JSON)**
+
+  `{`
+
+  ```
+  `"success": "01",`
+  `"results": {`
+      `"partnerCode": "MOMOWMQF20230815",`
+      `"orderId": "PKG0004",`
+      `"requestId": "PKG0004",`
+      `"amount": 50000,`
+      `"responseTime": 1692956430335,`
+      `"message": "Thành công.",`
+      `"resultCode": 0,`
+      `"payUrl": "https://test-payment.momo.vn/v2/gateway/pay?t=TU9NT1dNUUYyMDIzMDgxNXxQS0cwMDA0&s=34532a006ecc43583bb2517792690020137b531a5b6eac3d59b2609b50b8fb56"`
+  `}`
+
+   ```
+
+  `}`

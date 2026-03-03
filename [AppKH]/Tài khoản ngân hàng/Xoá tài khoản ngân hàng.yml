@@ -1,0 +1,26 @@
+info:
+  name: Xoá tài khoản ngân hàng
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Customers/DeleteBankAccount"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "BankAccountId":1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

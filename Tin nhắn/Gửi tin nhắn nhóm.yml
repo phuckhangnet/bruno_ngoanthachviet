@@ -1,0 +1,29 @@
+info:
+  name: Gửi tin nhắn nhóm
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Groups/Compose"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "185"
+  body:
+    type: json
+    data: |-
+      {
+          "Content":" 185 Xin chào quản lí 182",
+          "GroupIds":[1]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

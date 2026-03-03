@@ -1,0 +1,7 @@
+info:
+  name: Dịch vụ cộng thêm
+  type: folder
+  seq: 24
+
+request:
+  auth: inherit

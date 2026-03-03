@@ -1,0 +1,93 @@
+info:
+  name: Lấy danh sách sản phẩm đấu giá
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Auction/Sop/GetProducts"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |+
+      {
+          "SearchText": "", // Tên sản phẩm, mã sản phẩm, tên phiên, mã phiên 
+          "PageNumber": 1,
+          "PageSize": 10,
+          "Status": "" // All, InProgress, Upcomming,  Sold, Confirmed,AwaitingPayment,Paid,OrderCreated,Completed,Failed
+      }
+      // Trạng thái của sản phẩm có thể của respopnse:
+      // {
+      //   "Upcoming": {
+      //     "value": "Upcoming",
+      //     "description": "Sắp diễn ra"
+      //   },
+      //   "InProgress": {
+      //     "value": "InProgress",
+      //     "description": "Đang diễn ra"
+      //   },
+      //   "Sold": {
+      //     "value": "Sold",
+      //     "description": "Đã bán"
+      //   },
+      //   "Ended": {
+      //     "value": "Ended",
+      //     "description": "Đã kết thúc"
+      //   },
+      //   "WaitingWinnerConfirmation": {
+      //     "value": "WaitingWinnerConfirmation",
+      //     "description": "Chờ người thắng xác nhận"
+      //   },
+      //   "WaitingStaffConfirmation": {
+      //     "value": "WaitingStaffConfirmation",
+      //     "description": "Chờ nhân viên xác nhận"
+      //   },
+      //   "WaitingWinnerPayment": {
+      //     "value": "WaitingWinnerPayment",
+      //     "description": "Chờ người thắng thanh toán"
+      //   },
+      //   "WinnerPaidAtStore": {
+      //     "value": "WinnerPaidAtStore",
+      //     "description": "Người thắng đã xác nhận thanh toán tại cửa hàng"
+      //   },
+      //   "WinnerPaidInFullAtStore": {
+      //     "value": "WinnerPaidInFullAtStore",
+      //     "description": "Người thắng đã thanh toán đủ tại cửa hàng"
+      //   },
+      //   "WinnePaidPartAtStore": {
+      //     "value": "WinnePaidPartAtStore",
+      //     "description": "Người thắng đã thanh toán một phần tại cửa hàng"
+      //   },
+      //   "WinnerPaidByDeposit": {
+      //     "value": "WinnerPaidByDeposit",
+      //     "description": "Người thắng đã thanh toán bằng tiền ký quỹ"
+      //   },
+      //   "Paid": {
+      //     "value": "Paid",
+      //     "description": "Đã thanh toán (chung)"
+      //   },
+      //   "OrderCreated": {
+      //     "value": "OrderCreated",
+      //     "description": "Đã tạo đơn hàng"
+      //   },
+      //   "Completed": {
+      //     "value": "Completed",
+      //     "description": "Hoàn thành"
+      //   },
+      //   "Failed": {
+      //     "value": "Failed",
+      //     "description": "Thất bại/Không thành công"
+      //   }
+      // }
+
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

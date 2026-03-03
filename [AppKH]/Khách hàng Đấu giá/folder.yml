@@ -1,0 +1,28 @@
+info:
+  name: Khách hàng Đấu giá
+  type: folder
+  seq: 5
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    | Phương Thức | Tham Số | Mô Tả |
+    | --- | --- | --- |
+    | `JoinAuctionGroup` | `int auctionId` | Tham gia group phiên đấu giá `auction-{auctionId}` để nhận cập nhật chung cho phiên. Gọi sau khi kết nối thành công. |
+    | `LeaveAuctionGroup` | `int auctionId` | Rời group phiên đấu giá `auction-{auctionId}`. Gọi khi rời phiên hoặc logout. |
+    | `JoinItemGroup` | `int itemId` | Tham gia group sản phẩm `item-{itemId}` để nhận cập nhật cụ thể cho sản phẩm (giá đấu, đếm ngược). |
+    | `LeaveItemGroup` | `int itemId` | Rời group sản phẩm `item-{itemId}`. |
+
+    Các Sự Kiện Server Gửi (Receive Từ Backend)
+
+    | Sự Kiện | Tham Số (Key Response) | Mô Tả | Group Gửi Đến |
+    | --- | --- | --- | --- |
+    | `ReceiveBidUpdate` | `int itemId`, `int highestBidderId`, `decimal newPrice`, `bool isAuto` | Cập nhật giá đấu mới, người giữ giá cao nhất, và loại bid (tự động hay tay). Kích hoạt khi có bid mới. | `item-{itemId}` |
+    | `ReceiveCountdownUpdate` | `int auctionId`, `int itemId`, `string type` (ví dụ: "Update", "ItemEnded"), `double remainingSeconds` | Cập nhật thời gian đếm ngược. `type` chỉ loại cập nhật (Update: reset/extend, ItemEnded: kết thúc). | `item-{itemId}` hoặc `auction-{auctionId}` nếu itemId=0 |
+    |  |  |  |  |
+    | `ReceiveWinnerAnnouncement` | `int itemId`, `int winnerUserId`, `decimal winningPrice` | Thông báo người thắng và giá thắng cho sản phẩm. | `item-{itemId}` |
+    | `ReceiveStatusUpdate` | `int auctionId`, `int itemId`, `string newStatus` | Cập nhật trạng thái (ví dụ: "InProgress", "Ended", "Completed"). ItemId=0 cho trạng thái phiên chung. | `item-{itemId}` hoặc `auction-{auctionId}` nếu itemId=0 |
+    |  |  |  |  |
+  type: text/markdown

@@ -1,0 +1,27 @@
+info:
+  name: Khoá/mở khoá khách hàng
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Customers/Actions"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "CustomerId": 10,
+          "Status": 0 // 1 | 0
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

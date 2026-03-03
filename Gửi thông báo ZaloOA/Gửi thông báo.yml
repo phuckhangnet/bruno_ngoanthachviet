@@ -1,0 +1,41 @@
+info:
+  name: Gửi thông báo
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Notification/SendZaloOa/SendContent"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          // Khi test lấy số điện thoại của chính mình, không lấy số điện thoại 
+          // bất kì để tránh gửi nhầm đến số của người khác.
+          // Nếu khách hàng đang test không có số đt hoặc số sai thì tạo 
+          // khách hàng mới có số điện của mình để test.
+          "TemplateCode":"order_evalution",
+          "OrderInfo":[
+              {
+                  "OrderId": 14,
+                  "OrderCode":"NTV00000014",
+                  "CustomerPhone":"0967900801",
+                  "CustomerName":"Long Phan",
+                  "OrderDatetime":"2025-09-10T16:06:00"
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

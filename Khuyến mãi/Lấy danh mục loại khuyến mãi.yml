@@ -1,0 +1,23 @@
+info:
+  name: Lấy danh mục loại khuyến mãi
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/PromotionTypes/GetAll"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

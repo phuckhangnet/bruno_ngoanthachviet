@@ -1,0 +1,27 @@
+info:
+  name: Thêm nhóm sản phẩm hàng loạt
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{url}}/Products/UpdateCategories"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "CategoryIds":[1,2,3], // []: empty sẽ xoá hết nhóm sản phẩm cho các sản phẩm trong ProductIds
+          "ProductIds":[12,23]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

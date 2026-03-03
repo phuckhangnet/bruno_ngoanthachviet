@@ -1,0 +1,26 @@
+info:
+  name: Lấy danh sách khách hàng
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Notification/SendZaloOa/GetCustomers"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "IsSent": false // true | false
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,7 @@
+info:
+  name: Lịch hoạt động
+  type: folder
+  seq: 31
+
+request:
+  auth: inherit

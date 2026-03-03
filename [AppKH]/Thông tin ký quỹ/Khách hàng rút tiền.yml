@@ -1,0 +1,27 @@
+info:
+  name: Khách hàng rút tiền
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Deposit/Customer/Withdraw"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "Amount":100000,
+          "BankAccountId":1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

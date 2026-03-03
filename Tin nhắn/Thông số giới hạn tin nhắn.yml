@@ -1,0 +1,25 @@
+info:
+  name: Thông số giới hạn tin nhắn
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Limits"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "185"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

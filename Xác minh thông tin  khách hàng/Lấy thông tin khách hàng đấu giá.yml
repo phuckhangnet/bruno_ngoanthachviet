@@ -1,0 +1,26 @@
+info:
+  name: Lấy thông tin khách hàng đấu giá
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Customers/GetInfoCustomerForAuction"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "CustomerId": 22
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

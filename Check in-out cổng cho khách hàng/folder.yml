@@ -1,0 +1,7 @@
+info:
+  name: Check in/out cổng cho khách hàng
+  type: folder
+  seq: 34
+
+request:
+  auth: inherit

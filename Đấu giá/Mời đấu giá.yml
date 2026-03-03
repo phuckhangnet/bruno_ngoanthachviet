@@ -1,0 +1,31 @@
+info:
+  name: Mời đấu giá
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/Auction/SOP/SendInvitations"
+  headers:
+    - name: x-api-key
+      value: pkn
+    - name: userIdLogin
+      value: "2"
+    - name: Cookie
+      value: ARRAffinity=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23; ARRAffinitySameSite=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23
+  body:
+    type: json
+    data: |-
+      {
+          "AuctionItemIds":[1364],
+          "CustomerIds":[1]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "- Lấy danh sách sản phẩm đấu giá tại enpoint của khách hàng: `{{url}}/Auction/Customer/GetListAuctions`"

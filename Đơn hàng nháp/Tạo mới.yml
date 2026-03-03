@@ -1,0 +1,28 @@
+info:
+  name: Tạo mới
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/DraftOrder/Create"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+        "IdNguoiTaoDon": 115,
+        "IdCuaHang": 0,
+        "NoiDung": "{\"sanphamdachon\":[{\"IDSanPham\":1117,\"SoLuongMua\":1,\"GiaBan\":2500000,\"GiaSauGiam\":2250000,\"ThoiGianBaoHanh\":3,\"KhoiLuong\":100,\"GiaGiamTienMat\":0,\"TiLeGiam\":0,\"MaSanPham\":\"PPK01117\",\"TenSanPham\":\"Vòng Lam Ngọc Ab1\",\"URLImage\":\"/_imageslibrary/products/1117_1.jpeg\",\"BaoHanh\":false,\"SuaChua\":false}]}"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,21 @@
+info:
+  name: Lấy danh mục hình thức nhận hàng
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{url}}/Common/GetAllDeliveryMethods"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

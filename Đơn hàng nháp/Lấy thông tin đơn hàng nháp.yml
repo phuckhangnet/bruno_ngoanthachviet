@@ -1,0 +1,27 @@
+info:
+  name: Lấy thông tin đơn hàng nháp
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/DraftOrder/GetByStoreIdAndEmployeeId"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "storeId":0,
+          "employeeId":12
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

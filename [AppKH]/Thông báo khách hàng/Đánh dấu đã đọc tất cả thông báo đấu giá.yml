@@ -1,0 +1,28 @@
+info:
+  name: Đánh dấu đã đọc tất cả thông báo đấu giá
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{url}}/NotificationBadge/Customer/MarkAllAsReadForAuction"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

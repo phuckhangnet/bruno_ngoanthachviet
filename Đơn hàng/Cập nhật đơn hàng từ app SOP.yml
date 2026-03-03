@@ -1,0 +1,89 @@
+info:
+  name: Cập nhật đơn hàng từ app SOP
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{url}}/Order/SOP/UpdateOrder"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "IdDonHang":74,
+          "ThongTinKhachHang": {
+              "DienThoai": "0967900801",
+              "Email": "haupvisme@gmail.com",
+              "Ho": "Phan",
+              "Ten": "Long",
+              "NgaySinh": "1994-02-19",
+              "MaQuocGia": "VN",
+              "TenQuocGia": "Vietnam",
+              "TenTinhThanh": "TP. Hồ Chí Minh",
+              "MaTinhThanh": "71",
+              // "MaQuanHuyen": "",
+              "TenQuanHuyen": "Quận 1",
+              // "MaPhuongXa": "",
+              "TenPhuongXa": "P. Tân Định",
+              "DiaChiChiTiet": "cap nhat 1234 Trần hưng đạo, P. Tân Định, Q. 1, TP. Hồ Chí Minh, ZIP: 71008"
+          },
+          "ThongTinNguoiNhan": {
+              "DienThoai": "0967900801",
+              "Email": "2900000002@2900000002.com",
+              "Ho": "Phan nhận",
+              "Ten": "Long nhận",
+              "NgaySinh": "1994-02-19",
+              "MaQuocGia": "VN",
+              "TenQuocGia": "Vietnam",
+              "TenTinhThanh": "TP. Hồ Chí Minh",
+              "MaTinhThanh": "71",
+              // "MaQuanHuyen": "",
+              "TenQuanHuyen": "Quận 1",
+              // "MaPhuongXa": "",
+              "TenPhuongXa": "P. Tân Định",
+              "DiaChiChiTiet": " cap nhat nhận 123 Trần hưng đạo, P. Tân Định, Q. 1, TP. Hồ Chí Minh, ZIP: 71008",
+          },
+          // "MaDonChung": "ORDER123",// Tạm thời không truyền
+          "PhiShip": 10000, // Api danh mục nhà vận chuyển trong commons 
+          "IdHinhThucThanhToan": 1, // Call api từ common
+          "IdHinhThucNhanHang": 1, // Call api từ common
+          "MaGiamGias": "(FREESHIP)[MUBOM3]: 20000, (BILLING)[11NOUX]: 50000, (PRODUCT)[7B9E3N]: 1000",
+          "SoTienGiam": 2000,
+          "SoTienGiamTrenSanPham": 0,
+          "GhiChu": "Giao trong ngay",
+          "GhiChuDichVuCongThem": "Bao goi qua tang",
+          "Vat": 40000,
+          "DonHangLienHe": false, // true:  nếu giá bán là liên hệ
+          "NgayDatHang": "2025-09-10T16:06:00Z",
+          "MaNhaVanChuyen": "GHTK",
+          "Products": [
+              {
+                  "IDSanPham": 27,
+                  "GiaBan": 20000000,
+                  "DonGia": 10000000,
+                  "SoLuongDaChon": 2,
+                  "ThoiGianBaoHanh": 24,
+                  "GhiChuTang": "Tang kem qua"
+              }
+          ],
+          "DichVuCongThem": [
+              {
+                  "IdDichVu": 1,
+                  "DonGia": 0,
+                  "SoLuongDaChon": 1,
+                  "IDChiTietDichVuCongThem": ""
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

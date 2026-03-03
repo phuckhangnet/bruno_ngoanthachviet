@@ -1,0 +1,29 @@
+info:
+  name: Tạo nhóm mới
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Groups/AddNew"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "GroupName":"Nhóm quản trị viên",
+          "MemberIds": [188,189,190]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

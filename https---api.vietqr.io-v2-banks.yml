@@ -1,0 +1,19 @@
+info:
+  name: https://api.vietqr.io/v2/banks
+  type: http
+  seq: 42
+
+http:
+  method: GET
+  url: https://api.vietqr.io/v2/banks
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |+
+  Generated from cURL: curl https://api.vietqr.io/v2/banks
+

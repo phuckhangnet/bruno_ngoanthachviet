@@ -1,0 +1,146 @@
+info:
+  name: -Báo cáo đơn hàng theo trạng thái vận chuyển
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{url}}/Report/BaoCaoChiTietDonHangVanChuyenTheoNgay"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "idNguoiDung": 2,
+          "tuNgay": "2025-01-01",
+          "denNgay": "2025-12-25",
+          //   "storeId": "0,1",
+          "top": 10
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Báo cáo đơn hàng theo trạng thái vận chuyển
+    request:
+      url: "{{url}}/Report/BaoCaoChiTietDonHangVanChuyenTheoNgay?idNguoiDung=69&tuNgay=2022-01-01&denNgay=2024-12-31&storeId=0&top=5"
+      method: GET
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      params:
+        - name: idNguoiDung
+          value: "69"
+          type: query
+        - name: tuNgay
+          value: 2022-01-01
+          type: query
+        - name: denNgay
+          value: 2024-12-31
+          type: query
+        - name: storeId
+          value: "0"
+          type: query
+        - name: top
+          value: "5"
+          type: query
+      body:
+        type: json
+        data: |
+          {
+              "Thang":"02",
+               "Nam":"2023",
+               "ListidCuaHang":[0]
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Tue, 19 Nov 2024 09:41:32 GMT
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: Content-Encoding
+          value: gzip
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Vary
+          value: Accept-Encoding
+        - name: Request-Context
+          value: appId=cid-v1:7b29a27b-1ca8-4676-9588-932f5c4495e1
+        - name: X-Powered-By
+          value: ASP.NET
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Success",
+              "metadata": [
+                  {
+                      "idTrangThaiVanChuyen": 7,
+                      "tenNhavanchuyen": "GHTK(Kênh app PKG)",
+                      "trangThaiDonHang": "Đơn hủy",
+                      "tongSoSanPham": 22,
+                      "tongTien": 20154597.8,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 18
+                  },
+                  {
+                      "idTrangThaiVanChuyen": 2,
+                      "tenNhavanchuyen": "GHTK(Kênh app PKG)",
+                      "trangThaiDonHang": "Đã xác nhận đơn hàng",
+                      "tongSoSanPham": 19,
+                      "tongTien": 58485375,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 9
+                  },
+                  {
+                      "idTrangThaiVanChuyen": 7,
+                      "tenNhavanchuyen": "GHTK(Kênh app PKG)",
+                      "trangThaiDonHang": "Đơn hủy",
+                      "tongSoSanPham": 4,
+                      "tongTien": 16500000,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 7",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 4
+                  },
+                  {
+                      "idTrangThaiVanChuyen": 5,
+                      "tenNhavanchuyen": "GHTK(Kênh app PKG)",
+                      "trangThaiDonHang": "Đang vận chuyển",
+                      "tongSoSanPham": 3,
+                      "tongTien": 199000,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 3
+                  },
+                  {
+                      "idTrangThaiVanChuyen": 8,
+                      "tenNhavanchuyen": "GHTK(Kênh app PKG)",
+                      "trangThaiDonHang": "Đã giao hàng",
+                      "tongSoSanPham": 1,
+                      "tongTien": 2391250,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 1
+                  }
+              ],
+              "statusCodes": 200
+          }

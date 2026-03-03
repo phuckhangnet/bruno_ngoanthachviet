@@ -1,0 +1,58 @@
+info:
+  name: Lấy số lượng thông báo chưa đọc
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/NotificationBadge/Customer/GetUnrealCount"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Link hub: //hubs/notification
+
+  Type:
+
+  | **Key (Template Type)** | **Title (Tiêu đề)** | **Body (Nội dung mẫu)** |
+  | **`Appointment`** | Lịch hẹn | Bạn có lịch hẹn mới |
+  | **`AuctionConfirm`** | Xác nhận đấu giá | Bạn đã tham gia đấu giá |
+  | **`OrderConfirmed`** | Đơn hàng | Cửa hàng đã xác nhận sản phẩm của bạn |
+  | **`AuctionInvitation`** | Phiên đấu giá | Bạn được mời đấu giá sản phẩm |
+  | **`DepositSuccess`** | Nạp tiền thành công | Ký quỹ đã được cập nhật |
+  | **`WithdrawalSuccess`** | Rút tiền thành công | Số tiền đã được chuyển về tài khoản của bạn |
+  | **`AuctionEnded`** | Phiên: `{{itemName}}` | Đã kết thúc. Giá chốt: `{{finalPrice}}` VND |
+
+  Keys:
+
+  **1: ReceiveNotification**
+
+  Format resonse:
+
+  | **Trường** | **Kiểu dữ liệu** | **Mô tả** | **Ví dụ** |
+  | `title` | `string` | Tiêu đề thông báo. | "Lịch hẹn" |
+  | `body` | `string` | Nội dung ngắn của thông báo. | "Bạn có lịch hẹn mới" |
+  | **`templateType`** | `string` | **Tên loại thông báo (Dùng để phân loại).** | **"Appointment"** |
+  | `data` | `string` | Chuỗi JSON chứa dữ liệu chi tiết (ID lịch hẹn, Mã đơn hàng, v.v.). | `'{"appointmentId": 101, "appointmentCode": "LH-00101"}'` |
+
+  **2\. UpdateNotificationBadge**
+
+  Trả về khi call api
+
+  | **Dữ liệu nhận được** | **Kiểu dữ liệu** | **Mô tả** | **Ví dụ** |
+  | `unreadCount` | `Number` (Integer) | **Tổng số lượng thông báo chưa đọc** còn lại của người dùng. | `5` |

@@ -1,0 +1,30 @@
+info:
+  name: Lấy danh sách sản phẩm
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Order/GetProducts"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "SearchText": "",
+          "PageNumber": 1,
+          "PageSize": 10,
+          "Identified": true,// Null | Không truyền: là lấy tất cả
+          "Quantity": null // Không truyền là lấy tấc cả loại số lượng
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

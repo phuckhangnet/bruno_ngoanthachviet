@@ -1,0 +1,105 @@
+info:
+  name: Thêm thông tin định danh sản phẩm
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Products/Identity/Create"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: ProductId
+        type: text
+        value: "46"
+      - name: IdentityOrganization
+        type: text
+        value: Hậu định  danh
+      - name: FoundTime
+        type: text
+        value: ""
+        disabled: true
+      - name: FoundLocation
+        type: text
+        value: '""'
+        disabled: true
+      - name: Finder
+        type: text
+        value: '""'
+        disabled: true
+      - name: WebsiteLink
+        type: text
+        value: " ''"
+      - name: VideoLink
+        type: text
+        value: "''"
+      - name: Histories[0].Time
+        type: text
+        value: 2010-01-01
+        disabled: true
+      - name: Histories[0].Content
+        type: text
+        value: Cột mốc đáng nhớ
+        disabled: true
+      - name: Histories[1].Time
+        type: text
+        value: 2025-01-02
+        disabled: true
+      - name: Histories[1].Content
+        type: text
+        value: "Cột mốc lịch sử "
+        disabled: true
+      - name: DocumentFilesText[0].File
+        type: file
+        value:
+          - postman-cloud:///1f0106da-0641-4a80-b781-41949ec0979c
+        disabled: true
+      - name: DocumentFilesText[1].File
+        type: file
+        value:
+          - postman-cloud:///1f00e175-4ea8-4e20-9022-57fadf702bbc
+        disabled: true
+      - name: DocumentFileAudioEN
+        type: file
+        value:
+          - postman-cloud:///1f08c881-778d-40c0-9262-5feb96eb1df0
+        disabled: true
+      - name: DocumentFileAudioVI
+        type: file
+        value:
+          - postman-cloud:///1f08c881-7905-4060-830f-e6b55ba310a6
+        disabled: true
+      - name: DocumentFilesText[0].FileName
+        type: text
+        value: Chứng nhận 1
+        disabled: true
+      - name: DocumentFilesText[1].FileName
+        type: text
+        value: Chứng nhận 2
+        disabled: true
+      - name: IdentificationCode
+        type: text
+        value: NTV-ACB0C876
+      - name: IsNatural
+        type: text
+        value: "false"
+      - name: DocumentFileAudioCN
+        type: file
+        value: []
+        disabled: true
+      - name: DocumentFileAudioJP
+        type: file
+        value: []
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

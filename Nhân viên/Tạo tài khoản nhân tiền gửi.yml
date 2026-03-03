@@ -1,0 +1,36 @@
+info:
+  name: Tạo tài khoản nhân tiền gửi
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Customer/CreateReceivingAccount"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "19"
+  body:
+    type: multipart-form
+    data:
+      - name: AccountHolderName
+        type: text
+        value: Phạm văn hậu
+      - name: BankName
+        type: text
+        value: MB Bank
+      - name: AccountNumber
+        type: text
+        value: "0967900801"
+      - name: QRImage
+        type: file
+        value:
+          - postman-cloud:///1f09f6a7-f146-4c40-8107-80522229abc0
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

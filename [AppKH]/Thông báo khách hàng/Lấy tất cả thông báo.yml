@@ -1,0 +1,51 @@
+info:
+  name: Lấy tất cả thông báo
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/NotificationBadge/Customer/GetTotalMessages"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          "PageNumber": 1,
+          "PageSize": 30
+      }
+
+      // Type message:message
+      //   // Lịch hẹn
+      //     public const string Appointment = "Appointment";
+          
+      //     // Xác nhận đấu giá
+      //     public const string AuctionConfirm = "AuctionConfirm";
+          
+      //     // Đơn hàng (Cửa hàng đã xác nhận)
+      //     public const string OrderConfirmed = "OrderConfirmed";
+          
+      //     // Lời mời tham gia đấu giá
+      //     public const string AuctionInvitation = "AuctionInvitation";
+          
+      //     // Nạp tiền thành công
+      //     public const string DepositSuccess = "DepositSuccess";
+          
+      //     // Rút tiền thành công
+      //     public const string WithdrawalSuccess = "WithdrawalSuccess";
+          
+      //     // Phiên đấu giá kết thúc
+      //     public const string AuctionEnded = "AuctionEnded";
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

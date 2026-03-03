@@ -1,0 +1,56 @@
+info:
+  name: Tạo mới bái viết
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Articles/Create"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: Title
+        type: text
+        value: "Bài viết lên lịch "
+        description: "Required "
+      - name: ShortDescription
+        type: text
+        value: Bai viet test update image
+        description: Nullable
+      - name: Content
+        type: text
+        value: <div><img src="4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d222">123456</img><div><img src="4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d333"><br></br><br></br></img></div></div>
+      - name: Status
+        type: text
+        value: Scheduled
+        description: Draft | Published | Scheduled
+      - name: ImageThumbnail
+        type: file
+        value:
+          - postman-cloud:///1f083e02-c957-4270-9fca-703ccc2e1a75
+      - name: ScheduledDate
+        type: text
+        value: 2025-09-16 16:00:00
+        description: Nullable
+      - name: ImageContent-4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d222
+        type: file
+        value:
+          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
+        disabled: true
+      - name: ImageContent-4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d333
+        type: file
+        value:
+          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

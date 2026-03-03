@@ -1,0 +1,29 @@
+info:
+  name: Đẩy lượt thích
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{url}}/Products/AddBoots"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "ProductId":13,
+          "StartDate":"2025-09-08",
+          "EndDate":"2025-10-08",
+          "BoostAmount": 10
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

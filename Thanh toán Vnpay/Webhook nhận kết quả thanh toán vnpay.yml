@@ -1,0 +1,69 @@
+info:
+  name: Webhook nhận kết quả thanh toán vnpay
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{url}}/ThanhToanMoMo/NhanKetQuaThanhToan"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  ### **Nhận Kết Quả Thanh Toán VNPAY**
+
+  Endpoint này được sử dụng để nhận kết quả thanh toán từ VNPAY thông qua cơ chế IPN (Instant Payment Notification).
+
+  #### **Request**
+
+  - **URL:** `{URL}/api/ThanhToanVnpay/NhanKetQuaThanhToan`
+      
+  - **Method:** `GET`
+      
+  - **API Key:** Yêu cầu `ApiKey` trong header để xác thực.
+      
+
+  #### **Parameters (Tham số truy vấn)**
+
+  Các tham số này được gửi qua URL.
+
+  | Trường | Kiểu dữ liệu | Bắt buộc | Ghi chú |
+  | `vnp_Amount` | `double` | Có | Số tiền thanh toán. |
+  | `vnp_BankCode` | `string` | Không | Mã ngân hàng. |
+  | `vnp_BankTranNo` | `string` | Không | Mã giao dịch của ngân hàng. |
+  | `vnp_CardType` | `string` | Không | Loại thẻ: `ATM`, `VISA`. |
+  | `vnp_OrderInfo` | `string` | Có | Chi tiết giao dịch. |
+  | `vnp_PayDate` | `datetime` | Không | Ngày giao dịch. |
+  | `vnp_ResponseCode` | `string` | Có | Mã phản hồi trạng thái giao dịch. |
+  | `vnp_TmnCode` | `string` | Có | Mã đối tác do VNPAY cấp. |
+  | `vnp_TransactionNo` | `string` | Có | Mã giao dịch của VNPAY. |
+  | `vnp_TransactionStatus` | `string` | Có | Trạng thái giao dịch. |
+  | `vnp_TxnRef` | `string` | Có | Mã đơn hàng của bạn. |
+  | `vnp_SecureHashType` | `string` | Không | Loại mã hóa, ví dụ: `SHA512`. |
+  | `vnp_SecureHash` | `string` | Có | Chuỗi mã hóa chữ ký để xác thực tính toàn vẹn của dữ liệu. |
+
+  #### **Response (Kết quả trả về)**
+
+  Server của bạn cần trả về một đối tượng JSON cho VNPAY để xác nhận đã nhận được kết quả.
+
+  | `RspCode` | `Message` | Ghi chú |
+  | `"00"` | `"Confirm Success"` | Giao dịch đã được xác nhận thành công. |
+  | `"01"` | `"Order not found"` | Không tìm thấy đơn hàng. |
+  | `"02"` | `"Order already confirmed"` | Đơn hàng đã được xác nhận trước đó. |
+  | `"04"` | `"invalid amount"` | Số tiền không hợp lệ. |
+  | `"97"` | `"Invalid signature"` | Chữ ký không hợp lệ, dữ liệu đã bị thay đổi. |
+  | `"99"` | `"Input data required"` | Thiếu tham số bắt buộc. |
+  | `"99"` | `"Unknow error"` | Lỗi không xác định. |

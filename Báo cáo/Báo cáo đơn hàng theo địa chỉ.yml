@@ -1,0 +1,147 @@
+info:
+  name: -Báo cáo đơn hàng theo địa chỉ
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{url}}/Report/BaoCaoChiTietDonHangDiaChiTheoNgay"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  params:
+    - name: ""
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |
+      {
+        "idNguoiDung": 2,
+        "tuNgay": "2025-01-01",
+        "denNgay": "2025-12-31",
+      //   "storeId": 0,
+        "top": 3,
+        "quocGia": true,
+        "quanHuyen": true,
+        "trangThai": true,
+        "tinhThanh": true
+        
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Báo cáo đon hàng theo dia chi
+    request:
+      url: "{{url}}/Report/BaoCaoChiTietDonHangDiaChiTheoNgay?idNguoiDung=69&tuNgay=2024-01-01&denNgay=2024-12-31&storeId=0&top=3&quocGia=true&quanHuyen=true&trangThai=true&tinhThanh=true"
+      method: GET
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      params:
+        - name: idNguoiDung
+          value: "69"
+          type: query
+        - name: tuNgay
+          value: 2024-01-01
+          type: query
+        - name: denNgay
+          value: 2024-12-31
+          type: query
+        - name: storeId
+          value: "0"
+          type: query
+        - name: top
+          value: "3"
+          type: query
+        - name: quocGia
+          value: "true"
+          type: query
+        - name: quanHuyen
+          value: "true"
+          type: query
+        - name: trangThai
+          value: "true"
+          type: query
+        - name: tinhThanh
+          value: "true"
+          type: query
+        - name: ""
+          value: ""
+          type: query
+          disabled: true
+      body:
+        type: json
+        data: |
+          {
+              "Thang":"02",
+               "Nam":"2023",
+               "ListidCuaHang":[0]
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Tue, 19 Nov 2024 09:42:15 GMT
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: Content-Encoding
+          value: gzip
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Vary
+          value: Accept-Encoding
+        - name: Request-Context
+          value: appId=cid-v1:7b29a27b-1ca8-4676-9588-932f5c4495e1
+        - name: X-Powered-By
+          value: ASP.NET
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Success",
+              "metadata": [
+                  {
+                      "idTrangThaiVanChuyen": 7,
+                      "trangThaiDonHang": "Đơn hủy",
+                      "tongSoSanPham": 24,
+                      "tongTien": 25754597.8,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 21
+                  },
+                  {
+                      "idTrangThaiVanChuyen": 2,
+                      "trangThaiDonHang": "Đã xác nhận đơn hàng",
+                      "tongSoSanPham": 27,
+                      "tongTien": 83447825,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 17
+                  },
+                  {
+                      "idTrangThaiVanChuyen": 1,
+                      "trangThaiDonHang": "Đã đặt hàng",
+                      "tongSoSanPham": 10,
+                      "tongTien": 22864300,
+                      "tinhThanh": "TP. Hồ Chí Minh",
+                      "quanHuyen": "Q. 1",
+                      "quocGia": "Viet Nam",
+                      "soDonHang": 7
+                  }
+              ],
+              "statusCodes": 200
+          }

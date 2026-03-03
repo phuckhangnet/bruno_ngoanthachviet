@@ -1,0 +1,85 @@
+info:
+  name: Tạo Link Thanh Toán
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/ThanhToanVnpay/TaoLinkThanhToan"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "MaDoiTac": "PKG",
+          "vnp_Amount": 100000,
+          "vnp_CurrCode": "VND",
+          "vnp_Locale": "vn",
+          "vnp_OrderInfo": "Thanh toan hoa don",
+          "vnp_OrderType": "other"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  ### **Tạo Link Thanh Toán VNPAY**
+
+  Endpoint này được sử dụng để tạo một liên kết thanh toán, cho phép người dùng thanh toán qua cổng VNPAY.
+
+  #### **Request**
+
+  - **URL:** `{URL}/api/ThanhToanVnpay/TaoLinkThanhToan`
+      
+  - **Method:** `POST`
+      
+  - **Content-Type:** `application/json`
+      
+
+  #### **Request Body (JSON)**
+
+  Dữ liệu được gửi trong phần body của request.
+
+  | Trường | Kiểu dữ liệu | Bắt buộc | Ghi chú |
+  | `MaDoiTac` | `string` | Có | Mã đối tác do Phúc Khang quy định, dùng để xác thực. |
+  | `vnp_TxnRef` | `string` | Có | Mã đơn hàng duy nhất của bạn. |
+  | `vnp_Amount` | `string` | Có | Tổng số tiền cần thanh toán. |
+  | `vnp_CurrCode` | `double` | Có | Đơn vị tiền tệ, ví dụ: `"VND"`, `"USD"`. |
+  | `vnp_Locale` | `string` | Có | Ngôn ngữ hiển thị trên trang thanh toán, ví dụ: `"vi"`, `"en"`. |
+  | `vnp_OrderInfo` | `string` | Có | Nội dung mô tả chi tiết thanh toán (không dấu, không có ký tự đặc biệt). |
+  | `vnp_OrderType` | `string` | Có | Mã danh mục hàng hóa. Sử dụng `"other"` nếu không xác định. |
+
+  #### **Response (JSON)**
+
+  - **Trường hợp thành công:** Trả về một đối tượng JSON chứa liên kết thanh toán.
+      
+      - `success`: `"01"`
+          
+      - `link`: URL để chuyển hướng người dùng đến trang thanh toán của VNPAY.
+          
+  - **Trường hợp thất bại:** Trả về một đối tượng JSON với mã lỗi và thông báo.
+      
+      - `success`: `"00"`
+          
+      - `message`: Thông báo lỗi.
+          
+
+  **Ví dụ Response:**
+
+  JSON
+
+  ```
+  {
+      "success": "01",
+      "link": "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=10000000&vnp_Command=pay&vnp_CreateDate=20230919023329&vnp_CurrCode=VND&vnp_IpAddr=113.173.230.92&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+hoa+don&vnp_OrderType=other&vnp_ReturnUrl=https://api-dev-pkg.azurewebsites.net/api/ThanhToanVnpay/NhanKetQuaThanhToan&vnp_TmnCode=PKGSWT01&vnp_TxnRef=PK00001620&vnp_Version=2.1.0&vnp_SecureHash=e4dda28aabedacc59ca6bf5e21e2af40caed7f190c1386b7f9caecbaa7e1985b365295be46f8ccee1155d1db7484c0e9ded69d97b428c73db204cddda6c2a519"
+  }
+
+   ```

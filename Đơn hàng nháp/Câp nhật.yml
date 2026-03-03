@@ -1,0 +1,29 @@
+info:
+  name: Câp nhật
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/DraftOrder/Update"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "IdDonHangNhap": 10,
+          "IdNguoiTaoDon":2,
+          "IdCuaHang":1,
+          "NoiDung":"{\"tonggiaban\":5500000,\"thoigianbaohanh\":\"-1\",\"khoiluong\":\"0\"}],\n\"ngaysinh\":\"\" ,\n\"nhantaicuahang\": 1,\n\"phiship\": 0,\n\"magiamgia\": \"\",\n\"sotiengiam\": 0,\n\"magiamgias\": \"\",\n\"sotiengiamtrensanpham\": 0,\n\"idnguoithuchien\": 0,\n\"ho\": \"\",\n\"ten\": \"0933333333\",\n\"vat\": 0,\n\"madonchung\": \"PK00001381\"\n}\n"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

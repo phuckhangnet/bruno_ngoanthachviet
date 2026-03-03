@@ -1,0 +1,114 @@
+info:
+  name: Cập nhật sản phẩm
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Products/Update"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "22"
+      - name: ProductName
+        type: text
+        value: Đá 3 update full resspon1se
+      - name: IsAuctionProduct
+        type: text
+        value: "true "
+        disabled: true
+      - name: WarrantyInMonths
+        type: text
+        value: "24"
+        disabled: true
+      - name: Quantity
+        type: text
+        value: "10"
+        disabled: true
+      - name: Weight
+        type: text
+        value: "10"
+        disabled: true
+      - name: Length
+        type: text
+        value: "10"
+        disabled: true
+      - name: Width
+        type: text
+        value: "10"
+        disabled: true
+      - name: Height
+        type: text
+        value: "10"
+        disabled: true
+      - name: UnitId
+        type: text
+        value: "1"
+        disabled: true
+      - name: IsPriceOnRequest
+        type: text
+        value: "true"
+        disabled: true
+      - name: ImportPrice
+        type: text
+        value: "5000000"
+        disabled: true
+      - name: SellingPrice
+        type: text
+        value: ""
+        disabled: true
+      - name: DiscountedPrice
+        type: text
+        value: ""
+        disabled: true
+      - name: Description
+        type: text
+        value: "Đá quý "
+        disabled: true
+      - name: StoreId
+        type: text
+        value: "11"
+        disabled: true
+      - name: CategoryIds
+        type: text
+        value: "-1"
+        description: "-1 : xoá tấc cả  nhóm sản phẩm"
+        disabled: true
+      - name: CategoryIds
+        type: text
+        value: "2"
+      - name: ImageDeleteOrders
+        type: text
+        value: "3"
+        description: |
+          Thứ tự ảnh cần xoá  
+          1 - Ảnh bìa 
+          2 -
+          3 -
+          4 -
+          5 - 
+        disabled: true
+      - name: ImageDeleteOrders
+        type: text
+        value: "2"
+        description: "Nếu cập nhật hoặc thêm mới thì truyền ảnh tương tự "
+        disabled: true
+      - name: Image3
+        type: file
+        value:
+          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Lấy thông tin cơ bản
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Customers/GetBasicInfo"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

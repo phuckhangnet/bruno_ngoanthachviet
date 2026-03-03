@@ -1,0 +1,28 @@
+info:
+  name: Đánh dấu đã đọc tất cả thông báo
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/NotificationBadge/Customer/MarkAllAsRead"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |-
+      {
+          
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

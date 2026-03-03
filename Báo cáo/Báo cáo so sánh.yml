@@ -1,0 +1,199 @@
+info:
+  name: -Báo cáo so sánh
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Report/BaoCaoThamChieu"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "nguon": "NT2025", //NT: nam-thang, vd: nguon:'NT2023' dich: 'NT2024'
+          //NQ: quý năm vd: nguon:'NQ2023', dich: 'NQ2024'
+          //QT: quý tháng, vd: nguon: 'QT202301', dich: 'QT202402'  // Q1/2023 vs Q2/2024
+          "dich": "NT2024",
+          "loaiSoLieu": "DT", // Chi cho phep: 'DT,DH,KH,SP,CP'
+          "idsCuaHang": "1"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Báo cáo tham chiếu
+    request:
+      url: "{{url}}/Report/BaoCaoThamChieu"
+      method: POST
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      body:
+        type: json
+        data: |-
+          {
+              "nguon": "NT2024", //NT: nam-thang, vd: nguon:'NT2023' dich: 'NT2024'
+              //NQ: quý năm vd: nguon:'NQ2023', dich: 'NQ2024'
+              //QT: quý tháng, vd: nguon: 'QT202301', dich: 'QT202402'  // Q1/2023 vs Q2/2024
+              "dich": "NT2023",
+              "loaiSoLieu": "DT", // Chi cho phep: 'DT,DH,KH,SP,CP'
+              "idsCuaHang": "5"
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Tue, 19 Nov 2024 09:40:39 GMT
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: Content-Encoding
+          value: gzip
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Vary
+          value: Accept-Encoding
+        - name: Request-Context
+          value: appId=cid-v1:7b29a27b-1ca8-4676-9588-932f5c4495e1
+        - name: X-Powered-By
+          value: ASP.NET
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Success",
+              "metadata": [
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 01",
+                      "groupByKey": "MONTH01",
+                      "dataNguon": 126,
+                      "dataDich": 718,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -592,
+                      "dataTyLe": "-82%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 02",
+                      "groupByKey": "MONTH02",
+                      "dataNguon": 72,
+                      "dataDich": 674,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -602,
+                      "dataTyLe": "-89%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 03",
+                      "groupByKey": "MONTH03",
+                      "dataNguon": 239,
+                      "dataDich": 429,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -190,
+                      "dataTyLe": "-44%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 04",
+                      "groupByKey": "MONTH04",
+                      "dataNguon": 109,
+                      "dataDich": 317,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -208,
+                      "dataTyLe": "-65%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 05",
+                      "groupByKey": "MONTH05",
+                      "dataNguon": 3,
+                      "dataDich": 110,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -107,
+                      "dataTyLe": "-97%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 06",
+                      "groupByKey": "MONTH06",
+                      "dataNguon": 0,
+                      "dataDich": 1314,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -1314,
+                      "dataTyLe": "-100%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 07",
+                      "groupByKey": "MONTH07",
+                      "dataNguon": 0,
+                      "dataDich": 282,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -282,
+                      "dataTyLe": "-100%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 08",
+                      "groupByKey": "MONTH08",
+                      "dataNguon": 0,
+                      "dataDich": 281,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -281,
+                      "dataTyLe": "-100%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 09",
+                      "groupByKey": "MONTH09",
+                      "dataNguon": 631,
+                      "dataDich": 270,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": 361,
+                      "dataTyLe": "133%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 10",
+                      "groupByKey": "MONTH10",
+                      "dataNguon": 395,
+                      "dataDich": 253,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": 142,
+                      "dataTyLe": "56%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 11",
+                      "groupByKey": "MONTH11",
+                      "dataNguon": 112,
+                      "dataDich": 364,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -252,
+                      "dataTyLe": "-69%"
+                  },
+                  {
+                      "loaiSoLieu": "DT",
+                      "groupBy": "Tháng 12",
+                      "groupByKey": "MONTH12",
+                      "dataNguon": 0,
+                      "dataDich": 90,
+                      "donViTinh": "triệu",
+                      "dataSoSanh": -90,
+                      "dataTyLe": "-100%"
+                  }
+              ],
+              "statusCodes": 200
+          }

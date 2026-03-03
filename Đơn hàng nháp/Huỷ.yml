@@ -1,0 +1,26 @@
+info:
+  name: Huỷ
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/DraftOrder/Delete"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "IdDonHangNhap": 10
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

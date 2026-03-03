@@ -1,0 +1,49 @@
+info:
+  name: Cập nhật lịch hẹn
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Appointments/Update"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "Id": 17,
+          "subject": "Cập nhật Cuộc họp giới thiệu sản phẩm mới",
+          // "appointmentDate": "2025-10-03T00:00:00Z",
+          "startTime": "11:30:00",
+          "endTime": "15:30:00",
+          "appointmentLink":"",
+          // "location": "2D đường 5b", // online | địa chỉ chi tiết
+          // "numberOfGuests": 5,
+          // //   "isOnline":true,
+          // "appointmentTypeId": 1, // call api trong commons
+          // "content": "Giới thiệu các dòng sản phẩm đá cảnh mới nhất, bao gồm cả các tác phẩm độc đáo và hiếm có.",
+          // "attendingCustomerIds": [
+          //     14
+          // ],
+          // "responsiblePersonIds": [
+          //     182,
+          //     183
+          // ],
+          // "expertIds": [
+          //     193
+          // ],
+          // "productIds": [
+          //     12
+          // ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

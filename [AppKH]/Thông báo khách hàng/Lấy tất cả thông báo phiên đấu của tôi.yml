@@ -1,0 +1,38 @@
+info:
+  name: Lấy tất cả thông báo phiên đấu của tôi
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/NotificationBadge/Customer/GetTotalMessagesForAuction"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: json
+    data: |
+      {
+          "PageNumber": 1,
+          "PageSize": 30
+      }
+
+      // // Phiên đấu giá sắp bắt đầu
+      //     public const string AuctionUpcoming = "AuctionUpcoming";
+          
+      //     //Phiên đấu giá đang diễn ra bị vượt giá 
+      //     public const string AuctionBidExceeded = "AuctionBidExceeded";
+          
+      //     //Chiến thắng phiên đấu giá
+      //     public const string AuctionWon = "AuctionWon";
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

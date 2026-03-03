@@ -1,0 +1,28 @@
+info:
+  name: Xoá tin nhắn nhóm
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Groups/Inboxes/Delete"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "GroupId":185
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

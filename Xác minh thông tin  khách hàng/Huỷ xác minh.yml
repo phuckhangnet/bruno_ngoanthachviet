@@ -1,0 +1,37 @@
+info:
+  name: Huỷ xác minh
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Customers/Identification/Delete"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: CustomerId
+        type: text
+        value: "14"
+      - name: Reason
+        type: text
+        value: Không tham gia nua
+      - name: ReceiptImage
+        type: file
+        value:
+          - postman-cloud:///1f09f423-720f-44d0-8ec7-32bf58817c67
+      - name: ReceiptImage
+        type: file
+        value:
+          - postman-cloud:///1f09f424-7b33-4470-8534-2e2512674f4c
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

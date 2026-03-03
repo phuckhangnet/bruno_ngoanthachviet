@@ -1,0 +1,126 @@
+info:
+  name: Báo cáo sản phẩm được yêu thích
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{url}}/Report/BaoCaoSanPhamYeuThich"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |
+      {
+         "idNguoiDung": 16,
+        "tuNgay": "2025-02-20",
+        "denNgay": "2025-02-20",
+        "storeId": 0,
+        "top": 100
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Bao cao san pham yeu thich
+    request:
+      url: "{{url}}/Report/BaoCaoSanPhamYeuThich?idNguoiDung=69&tuNgay=2023-10-01&denNgay=2024-10-31&top=5&storeId=0,1"
+      method: GET
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      params:
+        - name: idNguoiDung
+          value: "69"
+          type: query
+        - name: tuNgay
+          value: 2023-10-01
+          type: query
+        - name: denNgay
+          value: 2024-10-31
+          type: query
+        - name: top
+          value: "5"
+          type: query
+        - name: storeId
+          value: 0,1
+          type: query
+      body:
+        type: json
+        data: |
+          {
+              "Thang":"02",
+               "Nam":"2023",
+               "ListidCuaHang":[0]
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Tue, 19 Nov 2024 09:48:51 GMT
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: Content-Encoding
+          value: gzip
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Vary
+          value: Accept-Encoding
+        - name: Request-Context
+          value: appId=cid-v1:7b29a27b-1ca8-4676-9588-932f5c4495e1
+        - name: X-Powered-By
+          value: ASP.NET
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Success",
+              "metadata": [
+                  {
+                      "tenSanPham": "Vòng Lam Ngọc Ab1",
+                      "phanTramDaBan": 1,
+                      "soKhachHangMua": 16,
+                      "soLuongQuanTam": 59,
+                      "tongTien": 0
+                  },
+                  {
+                      "tenSanPham": "Vòng Lam D211ss",
+                      "phanTramDaBan": 39,
+                      "soKhachHangMua": 54,
+                      "soLuongQuanTam": 59,
+                      "tongTien": 0
+                  },
+                  {
+                      "tenSanPham": "Test 0041",
+                      "phanTramDaBan": 38,
+                      "soKhachHangMua": 16,
+                      "soLuongQuanTam": 11,
+                      "tongTien": 0
+                  },
+                  {
+                      "tenSanPham": "Test Thêm Sp 091j",
+                      "phanTramDaBan": 35,
+                      "soKhachHangMua": 11,
+                      "soLuongQuanTam": 9,
+                      "tongTien": 0
+                  },
+                  {
+                      "tenSanPham": "xTest sp mớidsô",
+                      "phanTramDaBan": 25,
+                      "soKhachHangMua": 14,
+                      "soLuongQuanTam": 8,
+                      "tongTien": 0
+                  }
+              ],
+              "statusCodes": 200
+          }

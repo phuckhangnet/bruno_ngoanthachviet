@@ -1,0 +1,26 @@
+info:
+  name: Xoá bài viết
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/News/Delete"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "ArticleId":22
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

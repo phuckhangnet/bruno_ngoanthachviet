@@ -1,0 +1,25 @@
+info:
+  name: Lấy tất cả thông tin nhóm
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Groups/GetAllInfo"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

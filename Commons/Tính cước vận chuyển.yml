@@ -1,0 +1,69 @@
+info:
+  name: Tính cước vận chuyển
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/Common/ShippingCalculateFee"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  ### **1\. Tổng quan**
+
+  API này được sử dụng để tính toán cước phí vận chuyển dựa trên thông tin về địa điểm gửi, nhận và các thuộc tính của gói hàng.
+
+  ---
+
+  ### **2\. Chi tiết Endpoint**
+
+  - **URL:** `{URL}/api/Common/TinhCuocVanChuyen`
+      
+  - **Method:** `POST`
+      
+
+  ---
+
+  ### **3\. Request Body (Tham số)**
+
+  API yêu cầu một **JSON object** trong body của request. Dưới đây là bảng mô tả chi tiết các trường cần thiết:
+
+  | Trường | Kiểu dữ liệu | Bắt buộc | Ghi chú |
+  | `matinhgui` | `int` | Có | Mã số của tỉnh/thành phố gửi hàng. |
+  | `tinhgui` | `string` | Có | Tên của tỉnh/thành phố gửi hàng. |
+  | `quangui` | `string` | Có | Tên của quận/huyện gửi hàng. |
+  | `matinhnhan` | `int` | Có | Mã số của tỉnh/thành phố nhận hàng. |
+  | `tinhnhan` | `string` | Có | Tên của tỉnh/thành phố nhận hàng. |
+  | `quannhan` | `string` | Có | Tên của quận/huyện nhận hàng. |
+  | `diachinhan` | `string` | Có | Địa chỉ chi tiết của người nhận hàng. |
+  | `trongluong` | `float` | Có | Trọng lượng của gói hàng (tính bằng gram). |
+  | `trigia` | `int` | Có | Giá trị bồi thường của gói hàng, dùng để tính toán phí bảo hiểm. |
+  | `manhavanchuyen` | `string` | Có | Mã định danh của nhà cung cấp dịch vụ vận chuyển. Ví dụ: "XLOG". |
+  | `chuyenphatnhanh` | `bool` | Có | `true` nếu gói hàng được gửi bằng dịch vụ chuyển phát nhanh, ngược lại là `false`. |
+  | `giatoithieunoitinh` | `int` | Có | Mức cước phí tối thiểu áp dụng cho các đơn hàng vận chuyển trong cùng một tỉnh. |
+  | `giatoithieulientinh` | `int` | Có | Mức cước phí tối thiểu áp dụng cho các đơn hàng vận chuyển giữa các tỉnh khác nhau. |
+
+  Xuất sang Trang tính
+
+  ---
+
+  ### **4\. Response (Kết quả trả về)**
+
+  Sau khi xử lý thành công, API sẽ trả về một **JSON object** với các thông tin sau:
+
+  | Trường | Kiểu dữ liệu | Ghi chú |
+  | `success` | `string` | Mã trạng thái của kết quả. Ví dụ: `"01"` cho thành công. |
+  | `cuocphi` | `float` | Tổng cước phí vận chuyển đã được tính toán. |
+  | `khuvucduocgiaohang` | `bool` | `true` nếu khu vực nhận hàng được hỗ trợ giao hàng, ngược lại là `false`. |

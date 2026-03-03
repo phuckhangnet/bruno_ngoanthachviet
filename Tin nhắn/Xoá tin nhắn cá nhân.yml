@@ -1,0 +1,28 @@
+info:
+  name: Xoá tin nhắn cá nhân
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Individual/Inboxes/Delete"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "PartnerId":185
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

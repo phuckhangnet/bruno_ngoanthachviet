@@ -1,0 +1,26 @@
+info:
+  name: Xoá sản phẩm nổi bật
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/Products/Trending/Delete"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ProductIds":[]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,27 @@
+info:
+  name: Khoá/mở quyền đấu giá
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{url}}/Customers/AuctionPermission"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "2"
+  body:
+    type: json
+    data: |-
+      {
+          "CustomerId": 41,
+          "Status": true // true | false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

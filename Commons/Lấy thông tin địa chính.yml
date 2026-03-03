@@ -1,0 +1,1904 @@
+info:
+  name: Lấy thông tin địa chính
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Common/GetInfoAddress"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "CountryCode":"VN",// Mã quốc gia
+          // "StateCode":76 // Mã tỉnh/thành
+
+
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Lấy danh sách quốc gia
+    request:
+      url: "{{url}}/Common/GetInfoAddress"
+      method: POST
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      body:
+        type: json
+        data: |-
+          {
+              // "CountryCode":"VN"
+              // "StateCode":66
+
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Length
+          value: "630"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Wed, 02 Apr 2025 02:11:26 GMT
+        - name: Server
+          value: Kestrel
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Thành công",
+              "metadata": [
+                  {
+                      "CountryCode": "TW",
+                      "CountryName": "Taiwan"
+                  },
+                  {
+                      "CountryCode": "HK",
+                      "CountryName": "Hong Kong"
+                  },
+                  {
+                      "CountryCode": "FR",
+                      "CountryName": "France"
+                  },
+                  {
+                      "CountryCode": "CA",
+                      "CountryName": "Canada"
+                  },
+                  {
+                      "CountryCode": "GB",
+                      "CountryName": "United Kingdom"
+                  },
+                  {
+                      "CountryCode": "US",
+                      "CountryName": "United States of America"
+                  },
+                  {
+                      "CountryCode": "VN",
+                      "CountryName": "Viet Nam"
+                  },
+                  {
+                      "CountryCode": "KR",
+                      "CountryName": "South Korea"
+                  },
+                  {
+                      "CountryCode": "KH",
+                      "CountryName": "Cambodia"
+                  },
+                  {
+                      "CountryCode": "AU",
+                      "CountryName": "Australia"
+                  },
+                  {
+                      "CountryCode": "SG",
+                      "CountryName": "Singapore"
+                  },
+                  {
+                      "CountryCode": "DE",
+                      "CountryName": "Germany"
+                  }
+              ],
+              "statusCodes": 200
+          }
+  - name: Lấy danh sách tỉnh thành phố
+    request:
+      url: "{{url}}/Common/GetInfoAddress"
+      method: POST
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      body:
+        type: json
+        data: |-
+          {
+              "CountryCode":"VN"
+              // "StateCode":66
+
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Length
+          value: "2906"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Wed, 02 Apr 2025 02:12:09 GMT
+        - name: Server
+          value: Kestrel
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Thành công",
+              "metadata": [
+                  {
+                      "StateCode": "11",
+                      "StateName": "TP. Hà Nội"
+                  },
+                  {
+                      "StateCode": "71",
+                      "StateName": "TP. Hồ Chí Minh"
+                  },
+                  {
+                      "StateCode": "20",
+                      "StateName": "Hà Giang"
+                  },
+                  {
+                      "StateCode": "21",
+                      "StateName": "Cao Bằng"
+                  },
+                  {
+                      "StateCode": "23",
+                      "StateName": "Bắc Kạn"
+                  },
+                  {
+                      "StateCode": "22",
+                      "StateName": "Tuyên Quang"
+                  },
+                  {
+                      "StateCode": "31",
+                      "StateName": "Lào Cai"
+                  },
+                  {
+                      "StateCode": "32",
+                      "StateName": "Điện Biên"
+                  },
+                  {
+                      "StateCode": "30",
+                      "StateName": "Lai Châu"
+                  },
+                  {
+                      "StateCode": "34",
+                      "StateName": "Sơn La"
+                  },
+                  {
+                      "StateCode": "33",
+                      "StateName": "Yên Bái"
+                  },
+                  {
+                      "StateCode": "36",
+                      "StateName": "Hoà Bình"
+                  },
+                  {
+                      "StateCode": "24",
+                      "StateName": "Thái Nguyên"
+                  },
+                  {
+                      "StateCode": "25",
+                      "StateName": "Lạng Sơn"
+                  },
+                  {
+                      "StateCode": "01",
+                      "StateName": "Quảng Ninh"
+                  },
+                  {
+                      "StateCode": "26",
+                      "StateName": "Bắc Giang"
+                  },
+                  {
+                      "StateCode": "35",
+                      "StateName": "Phú Thọ"
+                  },
+                  {
+                      "StateCode": "15",
+                      "StateName": "Vĩnh Phúc"
+                  },
+                  {
+                      "StateCode": "16",
+                      "StateName": "Bắc Ninh"
+                  },
+                  {
+                      "StateCode": "03",
+                      "StateName": "Hải Dương"
+                  },
+                  {
+                      "StateCode": "04",
+                      "StateName": "TP. Hải Phòng"
+                  },
+                  {
+                      "StateCode": "17",
+                      "StateName": "Hưng Yên"
+                  },
+                  {
+                      "StateCode": "06",
+                      "StateName": "Thái Bình"
+                  },
+                  {
+                      "StateCode": "18",
+                      "StateName": "Hà Nam"
+                  },
+                  {
+                      "StateCode": "07",
+                      "StateName": "Nam Định"
+                  },
+                  {
+                      "StateCode": "08",
+                      "StateName": "Ninh Bình"
+                  },
+                  {
+                      "StateCode": "40",
+                      "StateName": "Thanh Hóa"
+                  },
+                  {
+                      "StateCode": "43",
+                      "StateName": "Nghệ An"
+                  },
+                  {
+                      "StateCode": "45",
+                      "StateName": "Hà Tĩnh"
+                  },
+                  {
+                      "StateCode": "47",
+                      "StateName": "Quảng Bình"
+                  },
+                  {
+                      "StateCode": "48",
+                      "StateName": "Quảng Trị"
+                  },
+                  {
+                      "StateCode": "49",
+                      "StateName": "Thừa Thiên Huế"
+                  },
+                  {
+                      "StateCode": "50",
+                      "StateName": "TP. Đà Nẵng"
+                  },
+                  {
+                      "StateCode": "51",
+                      "StateName": "Quảng Nam"
+                  },
+                  {
+                      "StateCode": "53",
+                      "StateName": "Quảng Ngãi"
+                  },
+                  {
+                      "StateCode": "55",
+                      "StateName": "Bình Định"
+                  },
+                  {
+                      "StateCode": "56",
+                      "StateName": "Phú Yên"
+                  },
+                  {
+                      "StateCode": "57",
+                      "StateName": "Khánh Hòa"
+                  },
+                  {
+                      "StateCode": "59",
+                      "StateName": "Ninh Thuận"
+                  },
+                  {
+                      "StateCode": "77",
+                      "StateName": "Bình Thuận"
+                  },
+                  {
+                      "StateCode": "60",
+                      "StateName": "Kon Tum"
+                  },
+                  {
+                      "StateCode": "61",
+                      "StateName": "Gia Lai"
+                  },
+                  {
+                      "StateCode": "63",
+                      "StateName": "Đắk Lắk"
+                  },
+                  {
+                      "StateCode": "65",
+                      "StateName": "Đắk Nông"
+                  },
+                  {
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng"
+                  },
+                  {
+                      "StateCode": "67",
+                      "StateName": "Bình Phước"
+                  },
+                  {
+                      "StateCode": "80",
+                      "StateName": "Tây Ninh"
+                  },
+                  {
+                      "StateCode": "75",
+                      "StateName": "Bình Dương"
+                  },
+                  {
+                      "StateCode": "76",
+                      "StateName": "Đồng Nai"
+                  },
+                  {
+                      "StateCode": "78",
+                      "StateName": "Bà Rịa - Vũng Tàu"
+                  },
+                  {
+                      "StateCode": "82",
+                      "StateName": "Long An"
+                  },
+                  {
+                      "StateCode": "84",
+                      "StateName": "Tiền Giang"
+                  },
+                  {
+                      "StateCode": "86",
+                      "StateName": "Bến Tre"
+                  },
+                  {
+                      "StateCode": "87",
+                      "StateName": "Trà Vinh"
+                  },
+                  {
+                      "StateCode": "85",
+                      "StateName": "Vĩnh Long"
+                  },
+                  {
+                      "StateCode": "81",
+                      "StateName": "Đồng Tháp"
+                  },
+                  {
+                      "StateCode": "90",
+                      "StateName": "An Giang"
+                  },
+                  {
+                      "StateCode": "91",
+                      "StateName": "Kiên Giang"
+                  },
+                  {
+                      "StateCode": "94",
+                      "StateName": "TP. Cần Thơ"
+                  },
+                  {
+                      "StateCode": "95",
+                      "StateName": "Hậu Giang"
+                  },
+                  {
+                      "StateCode": "96",
+                      "StateName": "Sóc Trăng"
+                  },
+                  {
+                      "StateCode": "97",
+                      "StateName": "Bạc Liêu"
+                  },
+                  {
+                      "StateCode": "98",
+                      "StateName": "Cà Mau"
+                  }
+              ],
+              "statusCodes": 200
+          }
+  - name: Lấy danh sách chi tiết quận huyện
+    request:
+      url: "{{url}}/Common/GetInfoAddress"
+      method: POST
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      body:
+        type: json
+        data: |-
+          {
+              "CountryCode":"VN",
+              "StateCode":66
+
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Length
+          value: "41092"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Wed, 02 Apr 2025 02:12:47 GMT
+        - name: Server
+          value: Kestrel
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Thành công",
+              "metadata": [
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 7",
+                      "SubdivisionName2": "P. 7, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 7",
+                      "CityName3": "P. 7"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 8",
+                      "SubdivisionName2": "P. 8, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 8",
+                      "CityName3": "P. 8"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 12",
+                      "SubdivisionName2": "P. 12, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 12",
+                      "CityName3": "P. 12"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 9",
+                      "SubdivisionName2": "P. 9, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 9",
+                      "CityName3": "P. 9"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 2",
+                      "SubdivisionName2": "P. 2, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 2",
+                      "CityName3": "P. 2"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 1",
+                      "SubdivisionName2": "P. 1, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 1",
+                      "CityName3": "P. 1"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 6",
+                      "SubdivisionName2": "P. 6, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 6",
+                      "CityName3": "P. 6"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 5",
+                      "SubdivisionName2": "P. 5, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 5",
+                      "CityName3": "P. 5"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 4",
+                      "SubdivisionName2": "P. 4, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 4",
+                      "CityName3": "P. 4"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 10",
+                      "SubdivisionName2": "P. 10, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 10",
+                      "CityName3": "P. 10"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 11",
+                      "SubdivisionName2": "P. 11, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 11",
+                      "CityName3": "P. 11"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, P. 3",
+                      "SubdivisionName2": "P. 3, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "P. 3",
+                      "CityName3": "P. 3"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, X. Xuân Thọ",
+                      "SubdivisionName2": "X. Xuân Thọ, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "X. Xuân Thọ",
+                      "CityName3": "X. Xuân Thọ"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, X. Tà Nung",
+                      "SubdivisionName2": "X. Tà Nung, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "X. Tà Nung",
+                      "CityName3": "X. Tà Nung"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, X. Trạm Hành",
+                      "SubdivisionName2": "X. Trạm Hành, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "X. Trạm Hành",
+                      "CityName3": "X. Trạm Hành"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Đà Lạt, X. Xuân Trường",
+                      "SubdivisionName2": "X. Xuân Trường, TP. Đà Lạt, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Đà Lạt",
+                      "CityName2": "X. Xuân Trường",
+                      "CityName3": "X. Xuân Trường"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, P. Lộc Phát",
+                      "SubdivisionName2": "P. Lộc Phát, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "P. Lộc Phát",
+                      "CityName3": "P. Lộc Phát"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, P. Lộc Tiến",
+                      "SubdivisionName2": "P. Lộc Tiến, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "P. Lộc Tiến",
+                      "CityName3": "P. Lộc Tiến"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, P. 2",
+                      "SubdivisionName2": "P. 2, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "P. 2",
+                      "CityName3": "P. 2"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, P. 1",
+                      "SubdivisionName2": "P. 1, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "P. 1",
+                      "CityName3": "P. 1"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, P. B'lao",
+                      "SubdivisionName2": "P. B'lao, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "P. B'lao",
+                      "CityName3": "P. B'lao"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, P. Lộc Sơn",
+                      "SubdivisionName2": "P. Lộc Sơn, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "P. Lộc Sơn",
+                      "CityName3": "P. Lộc Sơn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, X. Đạm Bri",
+                      "SubdivisionName2": "X. Đạm Bri, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "X. Đạm Bri",
+                      "CityName3": "X. Đạm Bri"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, X. Lộc Thanh",
+                      "SubdivisionName2": "X. Lộc Thanh, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "X. Lộc Thanh",
+                      "CityName3": "X. Lộc Thanh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, X. Lộc Nga",
+                      "SubdivisionName2": "X. Lộc Nga, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "X. Lộc Nga",
+                      "CityName3": "X. Lộc Nga"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, X. Lộc Châu",
+                      "SubdivisionName2": "X. Lộc Châu, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "X. Lộc Châu",
+                      "CityName3": "X. Lộc Châu"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, TP. Bảo Lộc, X. Đại Lào",
+                      "SubdivisionName2": "X. Đại Lào, TP. Bảo Lộc, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "TP. Bảo Lộc",
+                      "CityName2": "X. Đại Lào",
+                      "CityName3": "X. Đại Lào"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Đạ Tông",
+                      "SubdivisionName2": "X. Đạ Tông, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Đạ Tông",
+                      "CityName3": "X. Đạ Tông"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Đạ Long",
+                      "SubdivisionName2": "X. Đạ Long, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Đạ Long",
+                      "CityName3": "X. Đạ Long"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Đạ M' Rong",
+                      "SubdivisionName2": "X. Đạ M' Rong, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Đạ M' Rong",
+                      "CityName3": "X. Đạ M' Rong"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Liêng Srônh",
+                      "SubdivisionName2": "X. Liêng Srônh, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Liêng Srônh",
+                      "CityName3": "X. Liêng Srônh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Đạ Rsal",
+                      "SubdivisionName2": "X. Đạ Rsal, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Đạ Rsal",
+                      "CityName3": "X. Đạ Rsal"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Rô Men",
+                      "SubdivisionName2": "X. Rô Men, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Rô Men",
+                      "CityName3": "X. Rô Men"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Phi Liêng",
+                      "SubdivisionName2": "X. Phi Liêng, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Phi Liêng",
+                      "CityName3": "X. Phi Liêng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đam Rông, X. Đạ K' Nàng",
+                      "SubdivisionName2": "X. Đạ K' Nàng, H. Đam Rông, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đam Rông",
+                      "CityName2": "X. Đạ K' Nàng",
+                      "CityName3": "X. Đạ K' Nàng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lạc Dương, TT. Lạc Dương",
+                      "SubdivisionName2": "TT. Lạc Dương, H. Lạc Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lạc Dương",
+                      "CityName2": "TT. Lạc Dương",
+                      "CityName3": "TT. Lạc Dương"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lạc Dương, X. Đạ Chais",
+                      "SubdivisionName2": "X. Đạ Chais, H. Lạc Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lạc Dương",
+                      "CityName2": "X. Đạ Chais",
+                      "CityName3": "X. Đạ Chais"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lạc Dương, X. Đạ Nhim",
+                      "SubdivisionName2": "X. Đạ Nhim, H. Lạc Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lạc Dương",
+                      "CityName2": "X. Đạ Nhim",
+                      "CityName3": "X. Đạ Nhim"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lạc Dương, X. Đưng KNớ",
+                      "SubdivisionName2": "X. Đưng KNớ, H. Lạc Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lạc Dương",
+                      "CityName2": "X. Đưng KNớ",
+                      "CityName3": "X. Đưng KNớ"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lạc Dương, X. Lát",
+                      "SubdivisionName2": "X. Lát, H. Lạc Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lạc Dương",
+                      "CityName2": "X. Lát",
+                      "CityName3": "X. Lát"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lạc Dương, X. Đạ Sar",
+                      "SubdivisionName2": "X. Đạ Sar, H. Lạc Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lạc Dương",
+                      "CityName2": "X. Đạ Sar",
+                      "CityName3": "X. Đạ Sar"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, TT. Nam Ban",
+                      "SubdivisionName2": "TT. Nam Ban, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "TT. Nam Ban",
+                      "CityName3": "TT. Nam Ban"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, TT. Đinh Văn",
+                      "SubdivisionName2": "TT. Đinh Văn, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "TT. Đinh Văn",
+                      "CityName3": "TT. Đinh Văn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Phú Sơn",
+                      "SubdivisionName2": "X. Phú Sơn, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Phú Sơn",
+                      "CityName3": "X. Phú Sơn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Phi Tô",
+                      "SubdivisionName2": "X. Phi Tô, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Phi Tô",
+                      "CityName3": "X. Phi Tô"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Mê Linh",
+                      "SubdivisionName2": "X. Mê Linh, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Mê Linh",
+                      "CityName3": "X. Mê Linh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Đạ Đờn",
+                      "SubdivisionName2": "X. Đạ Đờn, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Đạ Đờn",
+                      "CityName3": "X. Đạ Đờn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Phúc Thọ",
+                      "SubdivisionName2": "X. Phúc Thọ, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Phúc Thọ",
+                      "CityName3": "X. Phúc Thọ"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Đông Thanh",
+                      "SubdivisionName2": "X. Đông Thanh, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Đông Thanh",
+                      "CityName3": "X. Đông Thanh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Gia Lâm",
+                      "SubdivisionName2": "X. Gia Lâm, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Gia Lâm",
+                      "CityName3": "X. Gia Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Tân Thanh",
+                      "SubdivisionName2": "X. Tân Thanh, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Tân Thanh",
+                      "CityName3": "X. Tân Thanh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Tân Văn",
+                      "SubdivisionName2": "X. Tân Văn, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Tân Văn",
+                      "CityName3": "X. Tân Văn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Hoài Đức",
+                      "SubdivisionName2": "X. Hoài Đức, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Hoài Đức",
+                      "CityName3": "X. Hoài Đức"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Tân Hà",
+                      "SubdivisionName2": "X. Tân Hà, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Tân Hà",
+                      "CityName3": "X. Tân Hà"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Liên Hà",
+                      "SubdivisionName2": "X. Liên Hà, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Liên Hà",
+                      "CityName3": "X. Liên Hà"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Đan Phượng",
+                      "SubdivisionName2": "X. Đan Phượng, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Đan Phượng",
+                      "CityName3": "X. Đan Phượng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Lâm Hà, X. Nam Hà",
+                      "SubdivisionName2": "X. Nam Hà, H. Lâm Hà, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Lâm Hà",
+                      "CityName2": "X. Nam Hà",
+                      "CityName3": "X. Nam Hà"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, TT. D'Ran",
+                      "SubdivisionName2": "TT. D'Ran, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "TT. D'Ran",
+                      "CityName3": "TT. D'Ran"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, TT. Thạnh Mỹ",
+                      "SubdivisionName2": "TT. Thạnh Mỹ, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "TT. Thạnh Mỹ",
+                      "CityName3": "TT. Thạnh Mỹ"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Lạc Xuân",
+                      "SubdivisionName2": "X. Lạc Xuân, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Lạc Xuân",
+                      "CityName3": "X. Lạc Xuân"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Đạ Ròn",
+                      "SubdivisionName2": "X. Đạ Ròn, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Đạ Ròn",
+                      "CityName3": "X. Đạ Ròn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Lạc Lâm",
+                      "SubdivisionName2": "X. Lạc Lâm, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Lạc Lâm",
+                      "CityName3": "X. Lạc Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Ka Đô",
+                      "SubdivisionName2": "X. Ka Đô, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Ka Đô",
+                      "CityName3": "X. Ka Đô"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Quảng Lập",
+                      "SubdivisionName2": "X. Quảng Lập, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Quảng Lập",
+                      "CityName3": "X. Quảng Lập"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Ka Đơn",
+                      "SubdivisionName2": "X. Ka Đơn, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Ka Đơn",
+                      "CityName3": "X. Ka Đơn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Tu Tra",
+                      "SubdivisionName2": "X. Tu Tra, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Tu Tra",
+                      "CityName3": "X. Tu Tra"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đơn Dương, X. Pró",
+                      "SubdivisionName2": "X. Pró, H. Đơn Dương, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đơn Dương",
+                      "CityName2": "X. Pró",
+                      "CityName3": "X. Pró"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, TT. Liên Nghĩa",
+                      "SubdivisionName2": "TT. Liên Nghĩa, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "TT. Liên Nghĩa",
+                      "CityName3": "TT. Liên Nghĩa"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Hiệp An",
+                      "SubdivisionName2": "X. Hiệp An, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Hiệp An",
+                      "CityName3": "X. Hiệp An"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Liên Hiệp",
+                      "SubdivisionName2": "X. Liên Hiệp, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Liên Hiệp",
+                      "CityName3": "X. Liên Hiệp"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Hiệp Thạnh",
+                      "SubdivisionName2": "X. Hiệp Thạnh, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Hiệp Thạnh",
+                      "CityName3": "X. Hiệp Thạnh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Bình Thạnh",
+                      "SubdivisionName2": "X. Bình Thạnh, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Bình Thạnh",
+                      "CityName3": "X. Bình Thạnh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. N'Thol Hạ",
+                      "SubdivisionName2": "X. N'Thol Hạ, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. N'Thol Hạ",
+                      "CityName3": "X. N'Thol Hạ"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Tân Hội",
+                      "SubdivisionName2": "X. Tân Hội, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Tân Hội",
+                      "CityName3": "X. Tân Hội"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Tân Thành",
+                      "SubdivisionName2": "X. Tân Thành, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Tân Thành",
+                      "CityName3": "X. Tân Thành"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Phú Hội",
+                      "SubdivisionName2": "X. Phú Hội, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Phú Hội",
+                      "CityName3": "X. Phú Hội"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Ninh Gia",
+                      "SubdivisionName2": "X. Ninh Gia, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Ninh Gia",
+                      "CityName3": "X. Ninh Gia"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Tà Năng",
+                      "SubdivisionName2": "X. Tà Năng, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Tà Năng",
+                      "CityName3": "X. Tà Năng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Đa Quyn",
+                      "SubdivisionName2": "X. Đa Quyn, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Đa Quyn",
+                      "CityName3": "X. Đa Quyn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Tà Hine",
+                      "SubdivisionName2": "X. Tà Hine, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Tà Hine",
+                      "CityName3": "X. Tà Hine"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Đà Loan",
+                      "SubdivisionName2": "X. Đà Loan, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Đà Loan",
+                      "CityName3": "X. Đà Loan"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đức Trọng, X. Ninh Loan",
+                      "SubdivisionName2": "X. Ninh Loan, H. Đức Trọng, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đức Trọng",
+                      "CityName2": "X. Ninh Loan",
+                      "CityName3": "X. Ninh Loan"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, TT. Di Linh",
+                      "SubdivisionName2": "TT. Di Linh, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "TT. Di Linh",
+                      "CityName3": "TT. Di Linh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Đinh Trang Thượng",
+                      "SubdivisionName2": "X. Đinh Trang Thượng, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Đinh Trang Thượng",
+                      "CityName3": "X. Đinh Trang Thượng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Tân Thượng",
+                      "SubdivisionName2": "X. Tân Thượng, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Tân Thượng",
+                      "CityName3": "X. Tân Thượng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Tân Lâm",
+                      "SubdivisionName2": "X. Tân Lâm, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Tân Lâm",
+                      "CityName3": "X. Tân Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Tân Châu",
+                      "SubdivisionName2": "X. Tân Châu, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Tân Châu",
+                      "CityName3": "X. Tân Châu"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Tân Nghĩa",
+                      "SubdivisionName2": "X. Tân Nghĩa, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Tân Nghĩa",
+                      "CityName3": "X. Tân Nghĩa"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Gia Hiệp",
+                      "SubdivisionName2": "X. Gia Hiệp, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Gia Hiệp",
+                      "CityName3": "X. Gia Hiệp"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Đinh Lạc",
+                      "SubdivisionName2": "X. Đinh Lạc, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Đinh Lạc",
+                      "CityName3": "X. Đinh Lạc"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Tam Bố",
+                      "SubdivisionName2": "X. Tam Bố, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Tam Bố",
+                      "CityName3": "X. Tam Bố"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Đinh Trang Hòa",
+                      "SubdivisionName2": "X. Đinh Trang Hòa, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Đinh Trang Hòa",
+                      "CityName3": "X. Đinh Trang Hòa"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Liên Đầm",
+                      "SubdivisionName2": "X. Liên Đầm, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Liên Đầm",
+                      "CityName3": "X. Liên Đầm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Gung Ré",
+                      "SubdivisionName2": "X. Gung Ré, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Gung Ré",
+                      "CityName3": "X. Gung Ré"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Bảo Thuận",
+                      "SubdivisionName2": "X. Bảo Thuận, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Bảo Thuận",
+                      "CityName3": "X. Bảo Thuận"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Hòa Ninh",
+                      "SubdivisionName2": "X. Hòa Ninh, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Hòa Ninh",
+                      "CityName3": "X. Hòa Ninh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Hòa Trung",
+                      "SubdivisionName2": "X. Hòa Trung, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Hòa Trung",
+                      "CityName3": "X. Hòa Trung"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Hòa Nam",
+                      "SubdivisionName2": "X. Hòa Nam, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Hòa Nam",
+                      "CityName3": "X. Hòa Nam"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Hòa Bắc",
+                      "SubdivisionName2": "X. Hòa Bắc, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Hòa Bắc",
+                      "CityName3": "X. Hòa Bắc"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Sơn Điền",
+                      "SubdivisionName2": "X. Sơn Điền, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Sơn Điền",
+                      "CityName3": "X. Sơn Điền"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Di Linh, X. Gia Bắc",
+                      "SubdivisionName2": "X. Gia Bắc, H. Di Linh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Di Linh",
+                      "CityName2": "X. Gia Bắc",
+                      "CityName3": "X. Gia Bắc"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, TT. Lộc Thắng",
+                      "SubdivisionName2": "TT. Lộc Thắng, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "TT. Lộc Thắng",
+                      "CityName3": "TT. Lộc Thắng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Bảo",
+                      "SubdivisionName2": "X. Lộc Bảo, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Bảo",
+                      "CityName3": "X. Lộc Bảo"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Lâm",
+                      "SubdivisionName2": "X. Lộc Lâm, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Lâm",
+                      "CityName3": "X. Lộc Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Phú",
+                      "SubdivisionName2": "X. Lộc Phú, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Phú",
+                      "CityName3": "X. Lộc Phú"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Bắc",
+                      "SubdivisionName2": "X. Lộc Bắc, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Bắc",
+                      "CityName3": "X. Lộc Bắc"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. B' Lá",
+                      "SubdivisionName2": "X. B' Lá, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. B' Lá",
+                      "CityName3": "X. B' Lá"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Ngãi",
+                      "SubdivisionName2": "X. Lộc Ngãi, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Ngãi",
+                      "CityName3": "X. Lộc Ngãi"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Quảng",
+                      "SubdivisionName2": "X. Lộc Quảng, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Quảng",
+                      "CityName3": "X. Lộc Quảng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Tân",
+                      "SubdivisionName2": "X. Lộc Tân, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Tân",
+                      "CityName3": "X. Lộc Tân"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Đức",
+                      "SubdivisionName2": "X. Lộc Đức, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Đức",
+                      "CityName3": "X. Lộc Đức"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc An",
+                      "SubdivisionName2": "X. Lộc An, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc An",
+                      "CityName3": "X. Lộc An"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Tân Lạc",
+                      "SubdivisionName2": "X. Tân Lạc, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Tân Lạc",
+                      "CityName3": "X. Tân Lạc"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Thành",
+                      "SubdivisionName2": "X. Lộc Thành, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Thành",
+                      "CityName3": "X. Lộc Thành"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Bảo Lâm, X. Lộc Nam",
+                      "SubdivisionName2": "X. Lộc Nam, H. Bảo Lâm, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Bảo Lâm",
+                      "CityName2": "X. Lộc Nam",
+                      "CityName3": "X. Lộc Nam"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, TT. Đạ M'ri",
+                      "SubdivisionName2": "TT. Đạ M'ri, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "TT. Đạ M'ri",
+                      "CityName3": "TT. Đạ M'ri"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, TT. Ma Đa Guôi",
+                      "SubdivisionName2": "TT. Ma Đa Guôi, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "TT. Ma Đa Guôi",
+                      "CityName3": "TT. Ma Đa Guôi"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Đạ M'ri",
+                      "SubdivisionName2": "X. Đạ M'ri, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Đạ M'ri",
+                      "CityName3": "X. Đạ M'ri"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Hà Lâm",
+                      "SubdivisionName2": "X. Hà Lâm, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Hà Lâm",
+                      "CityName3": "X. Hà Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Đạ Tồn",
+                      "SubdivisionName2": "X. Đạ Tồn, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Đạ Tồn",
+                      "CityName3": "X. Đạ Tồn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Đạ Oai",
+                      "SubdivisionName2": "X. Đạ Oai, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Đạ Oai",
+                      "CityName3": "X. Đạ Oai"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Đạ Ploa",
+                      "SubdivisionName2": "X. Đạ Ploa, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Đạ Ploa",
+                      "CityName3": "X. Đạ Ploa"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Ma Đa Guôi",
+                      "SubdivisionName2": "X. Ma Đa Guôi, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Ma Đa Guôi",
+                      "CityName3": "X. Ma Đa Guôi"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Đoàn Kết",
+                      "SubdivisionName2": "X. Đoàn Kết, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Đoàn Kết",
+                      "CityName3": "X. Đoàn Kết"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Huoai, X. Phước Lộc",
+                      "SubdivisionName2": "X. Phước Lộc, H. Đạ Huoai, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Huoai",
+                      "CityName2": "X. Phước Lộc",
+                      "CityName3": "X. Phước Lộc"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, TT. Đạ Tẻh",
+                      "SubdivisionName2": "TT. Đạ Tẻh, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "TT. Đạ Tẻh",
+                      "CityName3": "TT. Đạ Tẻh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. An Nhơn",
+                      "SubdivisionName2": "X. An Nhơn, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. An Nhơn",
+                      "CityName3": "X. An Nhơn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Quốc Oai",
+                      "SubdivisionName2": "X. Quốc Oai, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Quốc Oai",
+                      "CityName3": "X. Quốc Oai"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Mỹ Đức",
+                      "SubdivisionName2": "X. Mỹ Đức, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Mỹ Đức",
+                      "CityName3": "X. Mỹ Đức"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Quảng Trị",
+                      "SubdivisionName2": "X. Quảng Trị, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Quảng Trị",
+                      "CityName3": "X. Quảng Trị"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Đạ Lây",
+                      "SubdivisionName2": "X. Đạ Lây, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Đạ Lây",
+                      "CityName3": "X. Đạ Lây"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Hương Lâm",
+                      "SubdivisionName2": "X. Hương Lâm, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Hương Lâm",
+                      "CityName3": "X. Hương Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Triệu Hải",
+                      "SubdivisionName2": "X. Triệu Hải, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Triệu Hải",
+                      "CityName3": "X. Triệu Hải"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Hà Đông",
+                      "SubdivisionName2": "X. Hà Đông, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Hà Đông",
+                      "CityName3": "X. Hà Đông"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Đạ Kho",
+                      "SubdivisionName2": "X. Đạ Kho, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Đạ Kho",
+                      "CityName3": "X. Đạ Kho"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Đạ Tẻh, X. Đạ Pal",
+                      "SubdivisionName2": "X. Đạ Pal, H. Đạ Tẻh, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Đạ Tẻh",
+                      "CityName2": "X. Đạ Pal",
+                      "CityName3": "X. Đạ Pal"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, TT. Cát Tiên",
+                      "SubdivisionName2": "TT. Cát Tiên, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "TT. Cát Tiên",
+                      "CityName3": "TT. Cát Tiên"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Tiên Hoàng",
+                      "SubdivisionName2": "X. Tiên Hoàng, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Tiên Hoàng",
+                      "CityName3": "X. Tiên Hoàng"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Phước Cát 2",
+                      "SubdivisionName2": "X. Phước Cát 2, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Phước Cát 2",
+                      "CityName3": "X. Phước Cát 2"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Gia Viễn",
+                      "SubdivisionName2": "X. Gia Viễn, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Gia Viễn",
+                      "CityName3": "X. Gia Viễn"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Nam Ninh",
+                      "SubdivisionName2": "X. Nam Ninh, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Nam Ninh",
+                      "CityName3": "X. Nam Ninh"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Mỹ Lâm",
+                      "SubdivisionName2": "X. Mỹ Lâm, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Mỹ Lâm",
+                      "CityName3": "X. Mỹ Lâm"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Tư Nghĩa",
+                      "SubdivisionName2": "X. Tư Nghĩa, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Tư Nghĩa",
+                      "CityName3": "X. Tư Nghĩa"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Phước Cát 1",
+                      "SubdivisionName2": "X. Phước Cát 1, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Phước Cát 1",
+                      "CityName3": "X. Phước Cát 1"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Đức Phổ",
+                      "SubdivisionName2": "X. Đức Phổ, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Đức Phổ",
+                      "CityName3": "X. Đức Phổ"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Quảng Ngãi",
+                      "SubdivisionName2": "X. Quảng Ngãi, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Quảng Ngãi",
+                      "CityName3": "X. Quảng Ngãi"
+                  },
+                  {
+                      "ZipCode": "",
+                      "SubdivisionName": " | Lâm Đồng, H. Cát Tiên, X. Đồng Nai Thượng",
+                      "SubdivisionName2": "X. Đồng Nai Thượng, H. Cát Tiên, Lâm Đồng, ZIP: ",
+                      "StateCode": "66",
+                      "StateName": "Lâm Đồng",
+                      "CityName": "H. Cát Tiên",
+                      "CityName2": "X. Đồng Nai Thượng",
+                      "CityName3": "X. Đồng Nai Thượng"
+                  }
+              ],
+              "statusCodes": 200
+          }

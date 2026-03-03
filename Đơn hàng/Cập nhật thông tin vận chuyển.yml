@@ -1,0 +1,37 @@
+info:
+  name: Cập nhật thông tin vận chuyển
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{url}}/Order/UpdateShippingAddress"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "IdDonHang": 100,
+          "DienThoai": "0000000090",
+          "Ho": "Phan nhận",
+          "Ten": "Long nhận",
+          "MaQuocGia": "VN",
+          "TenQuocGia": "Vietnam",
+          "TenTinhThanh": "TP. Hồ Chí Minh",
+          "MaTinhThanh": "71",
+          "TenQuanHuyen": "Quận 1",
+          "TenPhuongXa": "P. Tân Định",
+          "DiaChiChiTiet": "123 Trần hưng đạo",
+          "ZipCode":"P. Tân Định, Q. 1, TP. Hồ Chí Minh, ZIP: 71008"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

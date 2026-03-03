@@ -1,0 +1,33 @@
+info:
+  name: Tạo mã khuyến mãi
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Promotions/CreateNewCodes"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+        "isInternal": false,
+        "promotionTypeId": 1,
+        "startDate": "2025-09-03T10:00:00Z",
+        "endDate": "2025-10-03T23:59:59Z",
+        "amountPromotion": 50000.00,
+        "percentagePromotion": null,
+        "usageCount": 1,
+        "codeQuantity": 10
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,43 @@
+info:
+  name: Xác nhận khách chuyển tiền tại cửa hàng
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{url}}/Auction/Sop/Winner/ConfirmPaymentAtStore"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "2"
+  body:
+    type: multipart-form
+    data:
+      - name: TransferAmount
+        type: text
+        value: "24000000"
+      - name: TransferImageFile
+        type: file
+        value:
+          - postman-cloud:///1f0ae6ae-789f-45b0-b862-fb6b408757f2
+        description: " File đã đổi tên theo trường Tên trên UI"
+      - name: TransferImageFile
+        type: file
+        value:
+          - postman-cloud:///1f0ae6ae-cb1d-4850-8021-c1b70d66ff32
+        description: " File đã đổi tên theo trường Tên trên UI"
+      - name: PaymentId
+        type: text
+        value: "9"
+        description: Lấy từ api [Lấy thông tin thanh toán tại cửa hàng]
+      - name: CustomerName
+        type: text
+        value: Hau
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,120 @@
+info:
+  name: -Báo cáo đơn hàng
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{url}}/Report/BaoCaoDonHangTheoNgay"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |
+      {
+       "idNguoiDung": 1,
+        "tuNgay": "2025-10-27",
+        "denNgay": "2025-10-27"
+
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Báo cáo đơn hàng
+    request:
+      url: "{{url}}/Report/BaoCaoDonHangTheoNgay?idNguoiDung=69&tuNgay=2024-01-01&denNgay=2024-12-31&storeId=0,1,2"
+      method: GET
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      params:
+        - name: idNguoiDung
+          value: "69"
+          type: query
+        - name: tuNgay
+          value: 2024-01-01
+          type: query
+        - name: denNgay
+          value: 2024-12-31
+          type: query
+        - name: storeId
+          value: 0,1,2
+          type: query
+      body:
+        type: json
+        data: |
+          {
+              "Thang":"02",
+               "Nam":"2023",
+               "ListidCuaHang":[0]
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Tue, 19 Nov 2024 09:40:16 GMT
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: Content-Encoding
+          value: gzip
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Vary
+          value: Accept-Encoding
+        - name: Request-Context
+          value: appId=cid-v1:7b29a27b-1ca8-4676-9588-932f5c4495e1
+        - name: X-Powered-By
+          value: ASP.NET
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Success",
+              "metadata": [
+                  {
+                      "idCuaHang": 0,
+                      "tenCuaHang": "PHÚC KHANG GEMS",
+                      "maMauCuaHang": "#0A8040",
+                      "tongSoDonHang": 74,
+                      "tongSoTinhThanh": 16,
+                      "tongSoQuocGia": 12,
+                      "tongSoQuanHuyen": 23,
+                      "tongSoSanPham": 96,
+                      "tongTien": 203799247.8
+                  },
+                  {
+                      "idCuaHang": 1,
+                      "tenCuaHang": "PHÚC KHANG GEMS - CN DI LINH",
+                      "maMauCuaHang": "#6D6D6D",
+                      "tongSoDonHang": 99,
+                      "tongSoTinhThanh": 6,
+                      "tongSoQuocGia": 1,
+                      "tongSoQuanHuyen": 11,
+                      "tongSoSanPham": 120,
+                      "tongTien": 482552122.5
+                  },
+                  {
+                      "idCuaHang": 2,
+                      "tenCuaHang": "KHỞI NGUYÊN GEMS",
+                      "maMauCuaHang": "#F9A92A",
+                      "tongSoDonHang": 4,
+                      "tongSoTinhThanh": 1,
+                      "tongSoQuocGia": 1,
+                      "tongSoQuanHuyen": 1,
+                      "tongSoSanPham": 9,
+                      "tongTien": 24132000
+                  }
+              ],
+              "statusCodes": 200
+          }

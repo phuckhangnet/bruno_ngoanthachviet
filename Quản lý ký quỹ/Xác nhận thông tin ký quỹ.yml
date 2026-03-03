@@ -1,0 +1,27 @@
+info:
+  name: Xác nhận thông tin ký quỹ
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Deposit/Sop/Confirm"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "2"
+  body:
+    type: json
+    data: |-
+      {
+         "DepositId":150,
+         "Status":"da_xac_nhan" // da_xac_nhan | khong_hop_le | chua_xac_nhan
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

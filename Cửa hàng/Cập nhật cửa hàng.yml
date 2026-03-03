@@ -1,0 +1,73 @@
+info:
+  name: Cập nhật cửa hàng
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Stores/Update"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "1"
+      - name: tenCuaHang
+        type: text
+        value: Cửa hàng 1 mới
+        description: "Required "
+      - name: image
+        type: file
+        value:
+          - postman-cloud:///1f083e02-c957-4270-9fca-703ccc2e1a75
+      - name: tenNguoiDaiDienCuaHang
+        type: text
+        value: Hậu
+      - name: diaChiCuaHang
+        type: text
+        value: ""
+        disabled: true
+      - name: diaChiWebCuaHang
+        type: text
+        value: ""
+        disabled: true
+      - name: emailCuaHang
+        type: text
+        value: ""
+        disabled: true
+      - name: maQuocGia
+        type: text
+        value: ""
+        disabled: true
+      - name: maBang
+        type: text
+        value: ""
+        disabled: true
+      - name: thanhPho
+        type: text
+        value: ""
+        disabled: true
+      - name: tenQuocGia
+        type: text
+        value: ""
+        disabled: true
+      - name: tenBang
+        type: text
+        value: ""
+        disabled: true
+      - name: idCuaHangCha
+        type: text
+        value: ""
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,27 @@
+info:
+  name: Huỷ đơn hàng
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{url}}/common/XuLyDonHang"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "loai": 3,
+          "IdDonHang": 59,
+          "IDNguoiThucHien":186,
+          "GhiChu": "Suongtv Suongtv Suongtv "
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

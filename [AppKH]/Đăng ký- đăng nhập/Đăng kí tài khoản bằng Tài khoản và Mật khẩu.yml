@@ -1,0 +1,46 @@
+info:
+  name: Đăng kí tài khoản bằng Tài khoản và Mật khẩu
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/Auth/Customer/RegistryWithAccount"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: from
+      value: web
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          "FirstName": "nam",
+          "LastName": "Phạm",
+          "Account": "hauphvnkhanghang3",
+          "Password": "123456",
+          "Email": "hauphvnkhanghang3@ngoanthachviet.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  - **Input: Chưa mã hoá**
+      
+
+  ``` json
+  {      
+  "Account": "xxx",
+  "Password": "xxx",
+  "FirstName":"xxx",
+  "LastName":"xxx", // Họ và tên đệm
+  "Email":"xxx@xx.xx"
+  }
+
+   ```

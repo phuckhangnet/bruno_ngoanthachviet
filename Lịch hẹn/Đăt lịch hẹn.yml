@@ -1,0 +1,47 @@
+info:
+  name: Đăt lịch hẹn
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Appointments/Create"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "2"
+  body:
+    type: json
+    data: |-
+      {
+          "subject": "Cuộc họp giới thiệu sản phẩm mới",
+          "appointmentDate": "2025-12-10T00:00:00Z",
+          "startTime": "10:30:00",
+          "endTime": "14:30:00",
+          "location": "2D đường 5b", // online | địa chỉ chi tiết
+          "numberOfGuests": 2,
+          //   "isOnline":true,
+          "appointmentLink": "https://meet.google.com/xyz-abcd-efg",
+          "appointmentTypeId": 1, // call api trong commons
+          "content": "Giới thiệu các dòng sản phẩm đá cảnh mới nhất, bao gồm cả các tác phẩm độc đáo và hiếm có.",
+          "attendingCustomerIds": [
+              4,1
+          ],
+          "responsiblePersonIds": [
+             2
+          ],
+          "expertIds": [
+              2
+          ],
+          "productIds": [
+              44
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

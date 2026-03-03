@@ -1,0 +1,41 @@
+info:
+  name: Ra gía tự động
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{url}}/Auction/Customer/PlaceAutoBid"
+  headers:
+    - name: x-api-key
+      value: pkn
+    - name: userIdLogin
+      value: "182"
+    - name: Cookie
+      value: ARRAffinity=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23; ARRAffinitySameSite=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23
+  body:
+    type: json
+    data: |-
+      {
+
+          "AuctionItemId": ,
+          "MaxBid":, // Số tiền tối đa đấu giá
+          "BidIncrement": // Bước giá của khách 
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Generated from cURL: curl --location 'https://api-pk-dev-gxacctfbaecbehbm.eastasia-01.azurewebsites.net/api/Stores/Update' \
+  --header 'x-api-key: pkn' \
+  --header 'userIdLogin: 182' \
+  --header 'Cookie: ARRAffinity=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23; ARRAffinitySameSite=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23' \
+  --form 'Id="1"' \
+  --form 'tenCuaHang="Cửa hàng 1 mới"' \
+  --form 'image=@"postman-cloud:///1f083e02-c957-4270-9fca-703ccc2e1a75"' \
+  --form 'tenNguoiDaiDienCuaHang="Hậu"'

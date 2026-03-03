@@ -1,0 +1,28 @@
+info:
+  name: Lấy chi tiết tin nhắn theo nhóm
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Groups/Inboxes/Detail"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "GroupId": 3
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

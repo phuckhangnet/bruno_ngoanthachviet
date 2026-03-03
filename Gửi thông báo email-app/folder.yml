@@ -1,0 +1,7 @@
+info:
+  name: Gửi thông báo email/app
+  type: folder
+  seq: 22
+
+request:
+  auth: inherit

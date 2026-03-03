@@ -1,0 +1,44 @@
+info:
+  name: Đăng kí tài khoản bằng số điện thoại
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Auth/Customer/RegistryByPhone"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: from
+      value: web
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          "phoneNumber":"0965879415",
+          "firstName":"Hậu",
+          "lastName":"Phạm"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  - **Input: Chưa mã hoá**
+      
+
+  ``` json
+  {      
+  "Account": "xxx",
+  "Password": "xxx",
+  "FirstName":"xxx",
+  "LastName":"xxx", // Họ và tên đệm
+  "Email":"xxx@xx.xx"
+  }
+
+   ```

@@ -1,0 +1,7 @@
+info:
+  name: Tin tức
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

@@ -1,0 +1,16 @@
+name: NTVTest
+variables:
+  - name: token
+    value: <JSON_WEB_TOKEN>
+  - name: url
+    value: https://testapi.ngoanthachviet.com/api
+  - name: apiKey
+    value: pkn
+  - name: url_bk
+    value: https://api-pk-dev-gxacctfbaecbehbm.eastasia-01.azurewebsites.net/api
+  - name: url_prod_bk
+    value: https://api.ngoanthachviet.com/api
+  - name: url_socket
+    value: https://api-pk-dev-gxacctfbaecbehbm.eastasia-01.azurewebsites.net
+  - name: test.ntv
+    value: https://testapi.ngoanthachviet.com/api

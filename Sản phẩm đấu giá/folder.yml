@@ -1,0 +1,7 @@
+info:
+  name: Sản phẩm đấu giá
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

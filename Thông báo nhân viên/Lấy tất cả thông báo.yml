@@ -1,0 +1,40 @@
+info:
+  name: Lấy tất cả thông báo
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/NotificationBadge/Staff/GetTotalMessages"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "2"
+  body:
+    type: json
+    data: |-
+      {
+          "PageNumber": 1,
+          "PageSize": 30
+      }
+      // Type message:message
+      //      Nạp tiền
+      //      public const string CustomerDepositMargin = "CustomerDepositMargin";
+      //     // Rút tiền
+      //     public const string CustomerWithdraw = "CustomerWithdraw";
+      //     // Đặt hàng
+      //     public const string CustomerPlaceOrder = "CustomerPlaceOrder";
+      //     // Đăng ký tài khoản
+      //     public const string CustomerRegister = "CustomerRegister";
+      //     // Sự kiện mới
+      //     public const string EventCreate = "EventCreate";
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

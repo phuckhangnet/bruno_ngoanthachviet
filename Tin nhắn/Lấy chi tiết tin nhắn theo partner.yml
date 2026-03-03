@@ -1,0 +1,28 @@
+info:
+  name: Lấy chi tiết tin nhắn theo partner
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/Employee/Message/Individual/Inboxes/Detail"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "PartnerId": 183
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

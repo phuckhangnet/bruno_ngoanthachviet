@@ -1,0 +1,101 @@
+info:
+  name: Tạo mới sản phẩm
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Products/Create"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: multipart-form
+    data:
+      - name: ProductName
+        type: text
+        value: NEW HOSTING TEST 1
+        description: "Required "
+      - name: IsAuctionProduct
+        type: text
+        value: "true"
+      - name: WarrantyInMonths
+        type: text
+        value: "24"
+        description: "Lấy value theo API: danh sách bảo hành"
+      - name: Quantity
+        type: text
+        value: "10"
+      - name: Weight
+        type: text
+        value: "10"
+      - name: Length
+        type: text
+        value: "10"
+      - name: Width
+        type: text
+        value: "10"
+      - name: Height
+        type: text
+        value: "10"
+      - name: UnitId
+        type: text
+        value: "1"
+      - name: IsPriceOnRequest
+        type: text
+        value: "true"
+      - name: ImportPrice
+        type: text
+        value: "5000000"
+      - name: SellingPrice
+        type: text
+        value: ""
+        disabled: true
+      - name: DiscountedPrice
+        type: text
+        value: ""
+        disabled: true
+      - name: Description
+        type: text
+        value: "Đá quý "
+      - name: StoreId
+        type: text
+        value: "1"
+      - name: Image1
+        type: file
+        value:
+          - postman-cloud:///1f083e02-c957-4270-9fca-703ccc2e1a75
+      - name: Image2
+        type: file
+        value:
+          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
+      - name: Image3
+        type: file
+        value:
+          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
+      - name: Image4
+        type: file
+        value:
+          - postman-cloud:///1f083e02-c957-4270-9fca-703ccc2e1a75
+      - name: Image5
+        type: file
+        value:
+          - postman-cloud:///1ef9272e-a129-4c70-a357-d62f79b622b1
+      - name: CategoryIds
+        type: text
+        value: "3"
+      - name: CategoryIds
+        type: text
+        value: "2"
+      - name: IsOnlineSale
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

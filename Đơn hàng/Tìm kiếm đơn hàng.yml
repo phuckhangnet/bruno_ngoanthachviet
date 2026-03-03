@@ -1,0 +1,29 @@
+info:
+  name: Tìm kiếm đơn hàng
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{url}}/Order/TimKiemDonHang"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "loai": 0,
+          "tungay": "2025-09-01",
+          "denngay": "2025-11-26",
+          "idnguoidung": 4,
+          "idcuahang": 1,
+          "chuoitimkiem": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

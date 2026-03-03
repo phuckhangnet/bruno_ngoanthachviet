@@ -1,0 +1,19 @@
+info:
+  name: FCM Khách hàng và Quản lý
+  type: folder
+  seq: 17
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ## Thông báo FCM
+
+    | **STAFF CONFIRM AUCTION PRODUCT WIN** | `SendNotificationStaffConfirmAuctionProductWin` | `StaffApp` | `{"type": "staff_confirm_auction_product_win", "customerId": "...", "auctionId": "...", "auctionItemId": "...", "screen": "AuctionItemDetail"}` |  
+    | **AUCTION END** | `SendNotificationEndAuction` | `CustomerApp` | `{"type": "auction_end", "auctionId": "...", "screen": "AuctionDetail"}` |  
+    | **BID PRICE WAS EXCEED BY OTHER** | `SendNotificationBidPriceWasExceedByOther` | `CustomerApp` | `{"type": "bid_price_exceeded", "auctionId": "...", "auctionItemId": "...", "screen": "AuctionItemDetail"}` |  
+    | **AUCTION WINNER** | `SendNotificationForWinner` | `CustomerApp` | `{"type": "auction_winner", "auctionId": "...", "auctionItemId": "...", "screen": "AuctionItemDetail"}` |  
+    | **DEPOSIT NOTIFICATION** | `SendNotificationForDeposit` | `StaffApp` | `{"type": "deposit_notification", "customerId": "...", "paymentCode": "...", "screen": "DepositDetail"}` |  
+    | **AUCTION REMINDER** | `SendAuctionReminder` | `CustomerApp` | `{"type": "reminder_auction", "auctionId": "...", "screen": "AuctionDetail"}` |
+  type: text/markdown

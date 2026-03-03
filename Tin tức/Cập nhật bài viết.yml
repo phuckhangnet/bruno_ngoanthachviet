@@ -1,0 +1,61 @@
+info:
+  name: Cập nhật bài viết
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/News/Update"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: Title
+        type: text
+        value: Bai viet co image content 3
+        description: "Required "
+        disabled: true
+      - name: ShortDescription
+        type: text
+        value: Bai viet co image content 3
+        description: Nullable
+        disabled: true
+      - name: Content
+        type: text
+        value: <div><img src="666666">123456</img></div>
+      - name: Status
+        type: text
+        value: Draft
+        description: Draft | Published | Scheduled
+        disabled: true
+      - name: ImageThumbnail
+        type: file
+        value:
+          - postman-cloud:///1ef9272e-a129-4c70-a357-d62f79b622b1
+        disabled: true
+      - name: ScheduledDate
+        type: text
+        value: 2025-06-26 09:51:28.727
+        description: Nullable
+        disabled: true
+      - name: ImagesContentNew-666666
+        type: file
+        value:
+          - postman-cloud:///1ef9272e-a129-4c70-a357-d62f79b622b1
+      - name: Id
+        type: text
+        value: "68"
+      - name: ImagesContentDelete
+        type: text
+        value: 444444.png,555555.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

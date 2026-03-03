@@ -1,0 +1,97 @@
+info:
+  name: Tạo mới khách hàng
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/Customers/AddNew"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: multipart-form
+    data:
+      - name: FirstName
+        type: text
+        value: Phan
+      - name: LastName
+        type: text
+        value: nam
+      - name: Gender
+        type: text
+        value: "1"
+        description: "0 | 1 | 2 (0: nữ, 1: nam, 2: khác)"
+      - name: DateOfBirth
+        type: text
+        value: 1992-09-09
+      - name: Email
+        type: text
+        value: 2900000000@2900000000.com
+      - name: PhoneNumber
+        type: text
+        value: "2900000001"
+      - name: CountryCode
+        type: text
+        value: VN
+      - name: CountryName
+        type: text
+        value: Việt Nam
+        description: "Tên quốc gia "
+      - name: CityCode
+        type: text
+        value: "71"
+      - name: CityName
+        type: text
+        value: TP. Hồ chí minh
+      - name: Address
+        type: text
+        value: 15 Nguyễn Bỉnh Khiêm, Tân Định
+        description: "Địa chỉ chi tiết "
+      - name: Relationships[0].FirstName
+        type: text
+        value: Đạt
+      - name: Relationships[0].LastName
+        type: text
+        value: Trần
+      - name: Relationships[0].Gender
+        type: text
+        value: "0"
+      - name: Relationships[0].DateOfBirth
+        type: text
+        value: 1998-05-05
+      - name: Relationships[0].Note
+        type: text
+        value: "Ghi chú "
+      - name: Relationships[0].RelationshipType
+        type: text
+        value: Em trai
+      - name: Title
+        type: text
+        value: Anh
+        description: Danh xưng
+      - name: NationalId
+        type: text
+        value: "2900000001"
+      - name: PassportNumber
+        type: text
+        value: ""
+        disabled: true
+      - name: DistrictName
+        type: text
+        value: ""
+      - name: DistrictCode
+        type: text
+        value: ""
+      - name: ZipCode
+        type: text
+        value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

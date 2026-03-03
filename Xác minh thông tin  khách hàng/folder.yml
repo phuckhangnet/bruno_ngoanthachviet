@@ -1,0 +1,7 @@
+info:
+  name: Xác minh thông tin  khách hàng
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

@@ -1,0 +1,33 @@
+info:
+  name: Khách hàng nạp tiền
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/Deposit/Customer/TransferConfirmation"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "1"
+  body:
+    type: multipart-form
+    data:
+      - name: TransferAmount
+        type: text
+        value: "500000000"
+      - name: BankAccountId
+        type: text
+        value: "1"
+      - name: TransferImageFile
+        type: file
+        value:
+          - postman-cloud:///1f09f5f3-3918-4650-b7c4-37584a72ae32
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

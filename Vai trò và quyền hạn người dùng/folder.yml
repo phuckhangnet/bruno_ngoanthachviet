@@ -1,0 +1,72 @@
+info:
+  name: Vai trò và quyền hạn người dùng
+  type: folder
+  seq: 9
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ## Quyền hạn
+
+    | **Nhóm** | **Tên Quyền Hạn** | **Khóa Quyền Hạn (Key)** |  
+    | **STORE** | Xem thông tin của cửa hàng | `Store_View` |  
+    | **STORE** | Thêm/Sửa/Xóa thông tin cửa hàng | `Store_Manage_Add`, `Store_Manage_Edit`, `Store_Manage_Delete` |  
+    | **ITEM** | Xem Sản Phẩm | `Item_View` |  
+    | **ITEM** | Thêm/Sửa/Xóa Sản Phẩm | `Item_Manage_Add`, `Item_Manage_Edit`, `Item_Manage_Delete` |  
+    | **ITEM** | Sửa Thêm Thông Tin Sản Phẩm | `Item_MoreEdit` |  
+    | **ITEM** | Xem Chi Phí Sản Xuất/Nhập Hàng | `Item_ViewCost` |  
+    | **ITEM** | Đẩy Sản Phẩm Lên Bán (Tiêu biểu) | `Item_PushSale` |  
+    | **ITEM** | Quản Lý Định Danh Sản Phẩm (Mã QR, Giấy chứng nhận...) | `Item_Identity` |  
+    | **ITEM** | Đẩy Sản Phẩm Lên Đấu Giá | `Item_PushAuction` |  
+    | **CUSTOMER** | Xem Khách Hàng | `Customer_View` |  
+    | **CUSTOMER** | Thêm/Sửa thông tin khách hàng & Khóa | `Customer_InsertEdit` |  
+    | **CUSTOMER** | Quản Lý Mối Quan Hệ Khách Hàng | `Customer_Relationship` |  
+    | **CUSTOMER** | Cho Phép Khách Hàng Đấu Giá | `Customer_Auction_Permit` |  
+    | **CUSTOMER** | Mời Khách Hàng Tham Gia Đấu Giá | `Customer_Auction_Invite` |  
+    | **CUSTOMER** | Xem Thông Tin Chi Tiết Khách Hàng (Lịch sử mua hàng/đấu giá) | `Customer_ViewMore` |  
+    | **STAFF** | Xem Nhân Viên | `Staff_View` |  
+    | **STAFF** | Thêm/Sửa thông tin nhân sự & Khóa | `Staff_InsertEdit` |  
+    | **STAFF** | Quản Lý Vai Trò & Quyền Hạn Nhân Viên | `Staff_RoleRule` |  
+    | **NOTIFICATION** | Gửi Thông Báo Email/Zalo OA | `Notification_SendEmail`, `Notification_SendZaloOA` |  
+    | **VOUCHER** | Quản Lý & Thêm/Sửa/Xóa Voucher | `Voucher_Manage_Add`, `Voucher_Manage_Edit`, `Voucher_Manage_Delete` |  
+    | **BOOKING** | Xem Lịch Hẹn | `Booking_View` |  
+    | **BOOKING** | Quản Lý & Thêm/Sửa/Xóa Lịch Hẹn & Dời ngày | `Booking_Manage_Add`, `Booking_Manage_Edit`, `Booking_Manage_Delete` |  
+    | **AUCTION** | Xem Lịch Đấu Giá | `Auction_View` |  
+    | **AUCTION** | Quản Lý & Thêm/Sửa/Xóa Lịch Đấu Giá | `Auction_Manage_Add`, `Auction_Manage_Edit`, `Auction_Manage_Delete` |  
+    | **AUCTION** | Cho Phép Khách Hàng Tham Gia Đấu Giá | `Auction_Customer_Permit` |  
+    | **AUCTION** | Bán Sản Phẩm Đấu Giá | `Auction_Sale_Item` |  
+    | **AUCTION** | Xem Thông Tin Ký Quỹ | `Accept_Deposit_View` |  
+    | **ORDER** | Xem Đơn Hàng | `Order_View` |  
+    | **ORDER** | Tạo Đơn Hàng Mới | `Order_Create` |  
+    | **ORDER** | Tạo Đơn Hàng Nháp | `Order_Draft_Create` |  
+    | **ORDER** | Yêu Cầu Hủy Đơn Hàng | `Order_Cancel_Request` |  
+    | **ORDER** | Công Cụ Xác Nhận Đơn Hàng | `Order_Tools_Confirm` |  
+    | **ORDER** | Công Cụ Giao Hàng | `Order_Tools_Deliver` |  
+    | **ORDER** | Xác Nhận Thanh Toán Đơn Hàng | `Order_Confirm_Payment` |  
+    | **ORDER** | Xác Nhận Đơn Hàng Online | `Order_Confirm_Online` |  
+    | **ORDER** | Xác Nhận Hủy Đơn Hàng | `Order_Cancel_Confirm` |  
+    | **SALE** | Xem Sản Phẩm Bán Hàng | `Sale_Item_View` |  
+    | **SALE** | Xem Khách Hàng Bán Hàng | `Sale_Customer_View` |  
+    | **SALE** | Xem Đơn Hàng Bán Hàng | `Sale_Order_View` |  
+    | **SALE** | Tạo Đơn Hàng Bán Hàng | `Sale_Order_Create` |  
+    | **SALE** | Xem Trang Thanh Toán Bán Hàng | `Sale_Payment_Page_View` |  
+    | **REPORT** | Xem Báo Cáo Doanh Thu (chung) | `Report_Revenue_View` |  
+    | **REPORT** | Xem Chi Tiết Báo Cáo Doanh Thu | `Report_Revenue_Details_View` |  
+    | **REPORT** | Xem So Sánh Báo Cáo Doanh Thu | `Report_Revenue_Compare_View` |  
+    | **REPORT** | Xem Báo Cáo Tồn Kho (chung) | `Report_Inventory_View` |  
+    | **REPORT** | Xem Chi Tiết Báo Cáo Tồn Kho | `Report_Inventory_Details_View` |  
+    | **REPORT** | Xem So Sánh Báo Cáo Tồn Kho | `Report_Inventory_Compare_View` |  
+    | **NEWS** | Xem Tin Tức | `News_View` |  
+    | **NEWS** | Quản Lý & Thêm/Sửa/Xóa Tin Tức | `News_Manage_Add`, `News_Manage_Edit`, `News_Manage_Delete` |  
+    | **INTRODUCE** | Xem Giới Thiệu | `Introduce_View` |  
+    | **INTRODUCE** | Quản Lý & Thêm/Sửa Giới Thiệu | `Introduce_Manage_Add`, `Introduce_Manage_Edit` |  
+    | **SCHEDULE** | Xem Lịch Biểu | `Schedule_View` |  
+    | **SCHEDULE** | Yêu Cầu Thay Đổi Lịch Biểu | `Schedule_Change_Request` |  
+    | **SCHEDULE** | Chấp Nhận Thay Đổi Lịch Biểu | `Schedule_Change_Accept` |  
+    | **MESSAGE** | Xem Tin Nhắn Nội Bộ | `Message_View` |  
+    | **MESSAGE** | Gửi Tin Nhắn Cho Người Dùng | `Message_Send_User` |  
+    | **MESSAGE** | Gửi Tin Nhắn Cho Nhóm | `Message_Send_Group` |  
+    | **FEATURED** | Đẩy Sản Phẩm Tiêu Biểu Lên Bán | `FeaturedProduct_PushSale` |
+  type: text/markdown

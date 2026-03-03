@@ -1,0 +1,271 @@
+info:
+  name: -Báo cáo chi phí theo ngày
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/Report/BaoCaoChiPhiCuaHangTheoNgay"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: storeID
+      value: "{{store_parent_id}}"
+  body:
+    type: json
+    data: |-
+      {
+        "idNguoiDung": 2,
+        "tuNgay": "2025-01-01",
+        "denNgay": "2025-12-31",
+      //   "storeId": "0,1"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Báo cáo chi phí theo ngày
+    request:
+      url: "{{url}}/Report/BaoCaoChiPhiCuaHangTheoNgay?idNguoiDung=110&tuNgay=2023-01-13&denNgay=2024-09-14&storeId=0,1"
+      method: GET
+      headers:
+        - name: x-api-key
+          value: "{{apiKey}}"
+      params:
+        - name: idNguoiDung
+          value: "110"
+          type: query
+        - name: tuNgay
+          value: 2023-01-13
+          type: query
+        - name: denNgay
+          value: 2024-09-14
+          type: query
+        - name: storeId
+          value: 0,1
+          type: query
+      body:
+        type: json
+        data: |
+          {
+              "Thang":"02",
+               "Nam":"2023",
+               "ListidCuaHang":[0]
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Tue, 19 Nov 2024 09:30:36 GMT
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: Content-Encoding
+          value: gzip
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Vary
+          value: Accept-Encoding
+        - name: Request-Context
+          value: appId=cid-v1:7b29a27b-1ca8-4676-9588-932f5c4495e1
+        - name: X-Powered-By
+          value: ASP.NET
+      body:
+        type: json
+        data: |-
+          {
+              "message": "Success",
+              "metadata": [
+                  {
+                      "idCuaHang": 0,
+                      "tenCuaHang": "PHÚC KHANG GEMS",
+                      "maMauCuaHang": "#0A8040",
+                      "tongTien": 3380000,
+                      "tongLoaiChiPhi": 5,
+                      "danhSachChiTietChiPhi": [
+                          {
+                              "IDChiPhi": 23,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-02-09T19:31:12",
+                              "SoTien": 3000000,
+                              "GhiChu": "dsfdsf",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-02-09T19:32:59.223",
+                              "IDLoaiChiPhi": 0,
+                              "TenLoaiChiPhi": "Chi phí khác"
+                          },
+                          {
+                              "IDChiPhi": 24,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-02-09T19:31:12",
+                              "SoTien": 0,
+                              "GhiChu": "",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-02-09T19:33:02.787",
+                              "IDLoaiChiPhi": 0,
+                              "TenLoaiChiPhi": "Chi phí khác"
+                          },
+                          {
+                              "IDChiPhi": 25,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-03-24T00:34:30",
+                              "SoTien": 50000,
+                              "GhiChu": "",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-03-24T00:35:30.093",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 26,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-03-24T00:34:30",
+                              "SoTien": 0,
+                              "GhiChu": "",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-03-24T00:35:50.357",
+                              "IDLoaiChiPhi": 0,
+                              "TenLoaiChiPhi": "Chi phí khác"
+                          },
+                          {
+                              "IDChiPhi": 27,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-03-24T00:34:30",
+                              "SoTien": 0,
+                              "GhiChu": "",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-03-24T00:35:52.923",
+                              "IDLoaiChiPhi": 1,
+                              "TenLoaiChiPhi": "Tiền điện"
+                          },
+                          {
+                              "IDChiPhi": 28,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-03-24T00:34:30",
+                              "SoTien": 0,
+                              "GhiChu": "",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-03-24T00:35:55.357",
+                              "IDLoaiChiPhi": 2,
+                              "TenLoaiChiPhi": "Tiền nước"
+                          },
+                          {
+                              "IDChiPhi": 29,
+                              "MaDonHang": "",
+                              "NgayPhatSinh": "2023-03-24T00:34:30",
+                              "SoTien": 50000,
+                              "GhiChu": "",
+                              "IDNguoiNhap": 1,
+                              "NgayHeThong": "2023-03-24T00:36:02.673",
+                              "IDLoaiChiPhi": 3,
+                              "TenLoaiChiPhi": "Mặt bằng"
+                          },
+                          {
+                              "IDChiPhi": 31,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:17:33.837",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151739_0_2_1711",
+                              "IDNguoiNhap": 2,
+                              "NgayHeThong": "2024-09-13T15:17:33.837",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 32,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:17:35.813",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151743_0_2_1711",
+                              "IDNguoiNhap": 2,
+                              "NgayHeThong": "2024-09-13T15:17:35.813",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 38,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:18:21.39",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151827_0_2_1711",
+                              "IDNguoiNhap": 2,
+                              "NgayHeThong": "2024-09-13T15:18:21.39",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 33,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:17:45.85",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151753_0_3_1711",
+                              "IDNguoiNhap": 3,
+                              "NgayHeThong": "2024-09-13T15:17:45.85",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 34,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:17:47.983",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151755_0_3_1711",
+                              "IDNguoiNhap": 3,
+                              "NgayHeThong": "2024-09-13T15:17:47.983",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 35,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:17:50.177",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151757_0_3_1711",
+                              "IDNguoiNhap": 3,
+                              "NgayHeThong": "2024-09-13T15:17:50.177",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 36,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:18:02.393",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151808_0_3_1711",
+                              "IDNguoiNhap": 3,
+                              "NgayHeThong": "2024-09-13T15:18:02.393",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          },
+                          {
+                              "IDChiPhi": 37,
+                              "MaDonHang": "PK00001711",
+                              "NgayPhatSinh": "2024-09-13T15:18:05.29",
+                              "SoTien": 35000,
+                              "GhiChu": "20240913151811_0_3_1711",
+                              "IDNguoiNhap": 3,
+                              "NgayHeThong": "2024-09-13T15:18:05.29",
+                              "IDLoaiChiPhi": 4,
+                              "TenLoaiChiPhi": "Thu lại đơn"
+                          }
+                      ]
+                  },
+                  {
+                      "idCuaHang": 1,
+                      "tenCuaHang": "PHÚC KHANG GEMS - CN DI LINH",
+                      "maMauCuaHang": "#6D6D6D",
+                      "tongTien": 0,
+                      "tongLoaiChiPhi": 0,
+                      "danhSachChiTietChiPhi": []
+                  }
+              ],
+              "statusCodes": 200
+          }

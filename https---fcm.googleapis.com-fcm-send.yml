@@ -1,0 +1,51 @@
+info:
+  name: https://fcm.googleapis.com/fcm/send
+  type: http
+  seq: 41
+
+http:
+  method: POST
+  url: https://fcm.googleapis.com/fcm/send
+  headers:
+    - name: Authorization
+      value: key=YOUR_SERVER_KEY
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "to": "YOUR_DEVICE_FCM_TOKEN",
+          "notification": {
+            "title": "Thông báo test 🔥",
+            "body": "Đây là tin nhắn FCM gửi bằng API"
+          },
+          "data": {
+            "screen": "AuctionDetail",
+            "extra": "HelloFromServer"
+          }
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |
+  Generated from cURL: curl -X POST \
+    https://fcm.googleapis.com/fcm/send \
+    -H "Authorization: key=YOUR_SERVER_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "to": "YOUR_DEVICE_FCM_TOKEN",
+      "notification": {
+        "title": "Thông báo test 🔥",
+        "body": "Đây là tin nhắn FCM gửi bằng API"
+      },
+      "data": {
+        "screen": "AuctionDetail",
+        "extra": "HelloFromServer"
+      }
+    }'
