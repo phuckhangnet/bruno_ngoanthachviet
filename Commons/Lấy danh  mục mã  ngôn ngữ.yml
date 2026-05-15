@@ -1,18 +1,16 @@
 info:
-  name: Lấy danh sách bảo hành
+  name: Lấy danh  mục mã  ngôn ngữ
   type: http
   seq: 9
 
 http:
   method: POST
-  url: "{{url}}/Common/GetProductWarranties"
+  url: "{{url}}/Common/GetAudioLanguages"
   headers:
     - name: x-api-key
       value: "{{apiKey}}"
-    - name: userIdLogin
-      value: "182"
   body:
-    type: text
+    type: json
     data: ""
   auth: inherit
 
