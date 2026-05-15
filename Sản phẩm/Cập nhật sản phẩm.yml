@@ -16,10 +16,10 @@ http:
     data:
       - name: Id
         type: text
-        value: "22"
+        value: "45"
       - name: ProductName
         type: text
-        value: Đá 3 update full resspon1se
+        value: Viên Đá Folorite Đặt Bàn Làm Việc Mini mới đổi tên
       - name: IsAuctionProduct
         type: text
         value: "true "
@@ -70,8 +70,7 @@ http:
         disabled: true
       - name: Description
         type: text
-        value: "Đá quý "
-        disabled: true
+        value: Đá quý  mới cập nhật mô tả
       - name: StoreId
         type: text
         value: "11"
@@ -79,7 +78,6 @@ http:
       - name: CategoryIds
         type: text
         value: "-1"
-        description: "-1 : xoá tấc cả  nhóm sản phẩm"
         disabled: true
       - name: CategoryIds
         type: text
@@ -87,18 +85,10 @@ http:
       - name: ImageDeleteOrders
         type: text
         value: "3"
-        description: |
-          Thứ tự ảnh cần xoá  
-          1 - Ảnh bìa 
-          2 -
-          3 -
-          4 -
-          5 - 
         disabled: true
       - name: ImageDeleteOrders
         type: text
         value: "2"
-        description: "Nếu cập nhật hoặc thêm mới thì truyền ảnh tương tự "
         disabled: true
       - name: Image3
         type: file

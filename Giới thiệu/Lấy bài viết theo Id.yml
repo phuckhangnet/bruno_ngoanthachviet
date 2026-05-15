@@ -1,11 +1,11 @@
 info:
-  name: Lấy danh sách bài viết
+  name: Lấy bài viết theo Id
   type: http
-  seq: 4
+  seq: 5
 
 http:
   method: POST
-  url: "{{url}}/Articles/GetAll"
+  url: "{{url}}/Articles/Detail"
   headers:
     - name: x-api-key
       value: "{{apiKey}}"
@@ -15,10 +15,7 @@ http:
     type: json
     data: |-
       {
-          "SearchText": "",
-          "PageNumber": 1,
-          "PageSize": 10,
-          "Status":"" // Draft | Published | Scheduled
+          "ArticleID":100
       }
   auth: inherit
 

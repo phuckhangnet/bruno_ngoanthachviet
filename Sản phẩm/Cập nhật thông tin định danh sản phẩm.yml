@@ -36,29 +36,25 @@ http:
       - name: WebsiteLink
         type: text
         value: https://google.com
+        disabled: true
       - name: VideoLink
         type: text
         value: https://www.facebook.com/reel/760596283234108
         disabled: true
       - name: Histories[0].Time
         type: text
-        value: 2025-01-01
-        description: Thêm mới
-        disabled: true
+        value: 2026-05-15
       - name: Histories[0].Content
         type: text
-        value: Cột mốc đáng nhớ new
-        disabled: true
+        value: Cột mốc đáng nhớ  mới cập nhật test audio
       - name: HistoryDeleteIds
         type: text
         value: "1"
-        description: Xoá
         disabled: true
       - name: DocumentFilesText[0].File
         type: file
         value:
           - postman-cloud:///1f0106dd-163b-4e60-a8b3-9831af388f09
-        description: Thêm mới
         disabled: true
       - name: DocumentFilesText[0].FileName
         type: text
@@ -67,7 +63,6 @@ http:
       - name: IdentityId
         type: text
         value: "56"
-        disabled: true
       - name: DocumentIdentityDeleteIds
         type: text
         value: "144"
@@ -80,13 +75,11 @@ http:
         type: file
         value:
           - postman-cloud:///1f08c881-7905-4060-830f-e6b55ba310a6
-        description: Thêm mới
         disabled: true
       - name: DocumentFileAudioVI
         type: file
         value:
           - postman-cloud:///1f08c881-778d-40c0-9262-5feb96eb1df0
-        description: "Thêm "
         disabled: true
       - name: IdentificationCode
         type: text

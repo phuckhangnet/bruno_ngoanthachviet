@@ -1,0 +1,29 @@
+info:
+  name: Lấy link âm thanh sản phẩm
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{url}}/Products/Speech/GetAudio"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+          "ProductId":45,
+          "LangCode":"vi-VN",
+        //  Việt nam, Nhật bản, Pháp, Đức, Ý, Trung quốc, tây bang nha, hanf quoc, nga :
+        //  'vi-VN', 'en-US', 'fr-FR', 'de-DE', 'it-IT', 'zh-CN', 'ja-JP, 'es-ES','pt-BR','ru-RU'
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

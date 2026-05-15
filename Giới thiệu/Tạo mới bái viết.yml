@@ -16,37 +16,95 @@ http:
     data:
       - name: Title
         type: text
-        value: "Bài viết lên lịch "
-        description: "Required "
+        value: "Ngoạn thạch: Vẻ đẹp từ sự không hoàn mỹ và hành trình cảm nhận chiều sâu"
       - name: ShortDescription
         type: text
-        value: Bai viet test update image
-        description: Nullable
+        value: Ngoạn thạch không đơn thuần là thú chơi đá tự nhiên. Với những người gắn bó lâu năm với bộ môn này, đây là hành trình khám phá vẻ đẹp từ sự không hoàn hảo, đồng thời là cách tiếp cận những giá trị văn hóa mà thiên nhiên và cha ông để lại.
       - name: Content
         type: text
-        value: <div><img src="4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d222">123456</img><div><img src="4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d333"><br></br><br></br></img></div></div>
+        value: |-
+          <article>
+            {/* Tiêu đề chính */}
+            <h1>Ngoạn thạch: Vẻ đẹp từ sự không hoàn mỹ và hành trình cảm nhận chiều sâu</h1>
+
+            {/* Thông tin chuyên mục và thời gian */}
+            <div className="meta-data">
+              <span className="category">ĐÁ - GỖ NGHỆ THUẬT</span>
+              <time dateTime="2026-04-21T05:17">05:17 | 21/04/2026</time>
+            </div>
+
+            {/* Đoạn Sapo (Tóm tắt) */}
+            <p className="sapo">
+              <strong>
+                Ngoạn thạch không đơn thuần là thú chơi đá tự nhiên. Với những người gắn bó lâu năm với bộ môn này, đây là hành trình khám phá vẻ đẹp từ sự không hoàn hảo, đồng thời là cách tiếp cận những giá trị văn hóa mà thiên nhiên và cha ông để lại.
+              </strong>
+            </p>
+
+            {/* Nội dung chi tiết */}
+            <section className="content">
+              <p>
+                Một trong những điều ngoạn thạch dạy người chơi là vẻ đẹp đến từ sự tự nhiên và không hoàn mỹ trọn vẹn. Dù xuất sắc đến đâu – từ chất liệu, màu sắc tự nhiên, hình dáng đến ý thạch, mỗi tác phẩm vẫn tồn tại ít nhiều những khiếm khuyết nhỏ.
+              </p>
+
+              <p>
+                Đó có thể là bố cục hoa văn, tính cân đối của tác phẩm, hoặc độ phân bổ màu sắc nước men da đá chưa đồng đều. Những điểm này thường chỉ người chơi có kinh nghiệm mới nhận ra.
+              </p>
+
+              {/* Placeholder cho hình ảnh */}
+              <figure>
+                <img src="chatgpt-image-apr-21-2026-05-17-33-am20260421051622" alt="Ngoạn thạch: Vẻ đẹp từ sự không hoàn mỹ" />
+                <figcaption>Hình ảnh minh họa tác phẩm ngoạn thạch</figcaption>
+              </figure>
+
+              <p>
+                Để tiến sâu vào lĩnh vực ngoạn thạch, người chơi cần đọc tài liệu từ nhiều nguồn, nắm bắt tính chất cơ bản của từng loại khoáng vật tạo nên tác phẩm – từ đó mới có thể phân biệt được tính quý hiếm hay phổ thông của từng viên đá.
+              </p>
+
+              <p>
+                Bên cạnh đó, việc vận dụng giá trị văn hóa nhân văn vào cảm nhận tác phẩm cũng được xem là yếu tố quan trọng. Và không kém phần thiết yếu là khả năng trình bày tác phẩm theo cách đơn giản, để công chúng dễ cảm nhận nhất.
+              </p>
+
+              <p>
+                Theo góc nhìn của những người chơi lâu năm, khi thưởng ngoạn một tác phẩm, đa phần người xem vẫn chỉ chú ý đến tính thẩm mỹ mà bỏ qua phần "hồn" – những giá trị đạo đức mà thiên nhiên muốn gợi mở, và mà nhà sưu tập muốn truyền tải. Đây mới được xem là cốt lõi của bộ môn ngoạn thạch mà cha ông muốn truyền đạt cho thế hệ sau.
+              </p>
+
+              <figure>
+                <img src="chatgpt-image-apr-21-2026-05-19-12-am20260421051742" alt="Chiều sâu văn hóa trong ngoạn thạch" />
+              </figure>
+
+              <p>
+                Việc xây dựng phong cách chơi cá nhân được nhìn nhận là xây dựng một nền tảng dài lâu. Điều này đòi hỏi mỗi nhà sưu tập cần có ý thức và trách nhiệm trong việc lưu giữ nền tảng đó – để cộng đồng cùng cảm nhận và ngoạn thạch ngày một phát triển bền vững hơn.
+              </p>
+            </section>
+
+            {/* Tác giả và Nguồn */}
+                <footer className="article-footer">
+                  <p className="author">Tác giả: <strong>Phạm Quốc Thuận</strong></p>
+                  <cite className="source-ref">
+                    Nguồn: <a href="https://tapchivietnamhuongsac.vn/ngoan-thach-ve-dep-tu-su-khong-hoan-my-va-hanh-trinh-cam-nhan-chieu-sau-5776.html" target="_blank" rel="noopener noreferrer">
+                      Tạp chí Việt Nam Hương sắc
+                    </a>
+                  </cite>
+                </footer>
+          </article>
       - name: Status
         type: text
         value: Scheduled
-        description: Draft | Published | Scheduled
       - name: ImageThumbnail
         type: file
         value:
-          - postman-cloud:///1f083e02-c957-4270-9fca-703ccc2e1a75
+          - /Users/hauphvn/Desktop/chatgpt-image-apr-21-2026-05-19-12-am20260421051742.jpg
       - name: ScheduledDate
         type: text
         value: 2025-09-16 16:00:00
-        description: Nullable
-      - name: ImageContent-4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d222
+      - name: ImageContent-chatgpt-image-apr-21-2026-05-17-33-am20260421051622
         type: file
         value:
-          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
-        disabled: true
-      - name: ImageContent-4f1f2e0c-9d6e-4b7f-8c3a-2a1f0a2d333
+          - /Users/hauphvn/Desktop/chatgpt-image-apr-21-2026-05-17-33-am20260421051622.jpg
+      - name: ImageContent-chatgpt-image-apr-21-2026-05-19-12-am20260421051742
         type: file
         value:
-          - postman-cloud:///1f00c6c1-216a-42c0-8efa-9453d804d894
-        disabled: true
+          - /Users/hauphvn/Desktop/chatgpt-image-apr-21-2026-05-19-12-am20260421051742.jpg
   auth: inherit
 
 settings:
