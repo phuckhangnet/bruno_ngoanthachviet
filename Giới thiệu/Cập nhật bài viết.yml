@@ -16,8 +16,7 @@ http:
     data:
       - name: Title
         type: text
-        value: Bai viet co image content 3
-        disabled: true
+        value: ABC cap nhat 2
       - name: ShortDescription
         type: text
         value: Bai viet co image content 3
@@ -89,6 +88,7 @@ http:
                   </cite>
                 </footer>
           </article>
+        disabled: true
       - name: Status
         type: text
         value: Draft
@@ -109,7 +109,7 @@ http:
         disabled: true
       - name: Id
         type: text
-        value: "105"
+        value: "107"
       - name: ImagesContentDelete
         type: text
         value: 444444.png,555555.png

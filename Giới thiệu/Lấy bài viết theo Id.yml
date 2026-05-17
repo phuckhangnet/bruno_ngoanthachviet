@@ -11,11 +11,13 @@ http:
       value: "{{apiKey}}"
     - name: userIdLogin
       value: "182"
+    - name: langCode
+      value: zh-CN
   body:
     type: json
     data: |-
       {
-          "ArticleID":100
+          "ArticleID":107
       }
   auth: inherit
 

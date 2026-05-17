@@ -16,7 +16,7 @@ http:
     data: |-
       {
           "ProductId":45,
-          "LangCode":"vi-VN",
+          "LangCode":"en-US",
         //  Việt nam, Nhật bản, Pháp, Đức, Ý, Trung quốc, tây bang nha, hanf quoc, nga :
         //  'vi-VN', 'en-US', 'fr-FR', 'de-DE', 'it-IT', 'zh-CN', 'ja-JP, 'es-ES','pt-BR','ru-RU'
       }

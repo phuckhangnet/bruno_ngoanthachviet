@@ -11,13 +11,15 @@ http:
       value: "{{apiKey}}"
     - name: userIdLogin
       value: "182"
+    - name: langCode
+      value: vi-VN
   body:
     type: json
     data: |-
       {
           "SearchText": "",
           "PageNumber": 1,
-          "PageSize": 100,
+          "PageSize": 10,
           "Identified": null,// Null | Không truyền: là lấy tất cả
           "IsAuction": null,// true | false | null
           "IsOnline": null,// true | false | null
