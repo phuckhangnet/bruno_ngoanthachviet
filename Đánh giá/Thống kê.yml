@@ -17,7 +17,8 @@ http:
       {
          "FromDate": "2026-05-01",
         "ToDate": "2026-05-30",
-        "Emotion": "", //'Good', 'Neutral', 'Bad'
+        "Emotion": "", //'Good', 'Neutral', 'Bad',
+        "FeatureId":1
 
       }
   auth: inherit

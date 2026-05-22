@@ -19,7 +19,6 @@ http:
         "FeedbackContent": "tot",
         "FeatureId":5,
         "Emotion": "Neutral", // 'Good', 'Neutral', 'Bad'
-        "Feature": "", // option
         "AppVersion": "1.1.1", // option 
       }
   auth: inherit

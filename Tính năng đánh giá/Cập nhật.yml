@@ -16,7 +16,8 @@ http:
     data: |-
       {
         "Name": "Tính năng chọn ngôn ngữ cập nhật nè 4", 
-        "Id":4
+        "Id":4,
+        "Status":"Active", // Active, Inactive
       }
   auth: inherit
 
