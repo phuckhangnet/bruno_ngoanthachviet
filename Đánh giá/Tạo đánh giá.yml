@@ -1,0 +1,31 @@
+info:
+  name: Tạo đánh giá
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/AppFeedback/SubmitFeedback"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+        //"CustomerId": 1, // null neu ko login
+        "FeedbackContent": "tot",
+        "FeatureId":5,
+        "Emotion": "Neutral", // 'Good', 'Neutral', 'Bad'
+        "Feature": "", // option
+        "AppVersion": "1.1.1", // option 
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

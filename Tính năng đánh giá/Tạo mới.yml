@@ -1,19 +1,23 @@
 info:
-  name: Lấy danh mục loại sản phẩm
+  name: Tạo mới
   type: http
-  seq: 2
+  seq: 1
 
 http:
   method: POST
-  url: "{{url}}/Common/GetListProductCategory"
+  url: "{{url}}/FeatureFeedback/Create"
   headers:
     - name: x-api-key
       value: "{{apiKey}}"
-    - name: landCode
-      value: en-US
+    - name: userIdLogin
+      value: "182"
   body:
     type: json
-    data: ""
+    data: |-
+      {
+        "Name": "Tính năng chọn ngôn ngữ", 
+
+      }
   auth: inherit
 
 settings:

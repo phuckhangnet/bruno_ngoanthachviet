@@ -1,0 +1,29 @@
+info:
+  name: Thống kê
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/AppFeedback/GetSummary"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+         "FromDate": "2026-05-01",
+        "ToDate": "2026-05-30",
+        "Emotion": "", //'Good', 'Neutral', 'Bad'
+
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

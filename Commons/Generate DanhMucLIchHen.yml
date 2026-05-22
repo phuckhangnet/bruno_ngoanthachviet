@@ -1,16 +1,14 @@
 info:
-  name: Lấy danh mục loại sản phẩm
+  name: Generate DanhMucLIchHen
   type: http
-  seq: 2
+  seq: 13
 
 http:
   method: POST
-  url: "{{url}}/Common/GetListProductCategory"
+  url: "{{url}}/Common/TranslateDanhMucLichHen"
   headers:
     - name: x-api-key
       value: "{{apiKey}}"
-    - name: landCode
-      value: en-US
   body:
     type: json
     data: ""

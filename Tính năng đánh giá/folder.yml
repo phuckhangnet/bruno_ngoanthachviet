@@ -1,0 +1,7 @@
+info:
+  name: Tính năng đánh giá
+  type: folder
+  seq: 45
+
+request:
+  auth: inherit

@@ -10,16 +10,17 @@ http:
     - name: x-api-key
       value: pkn
     - name: userIdLogin
-      value: "100"
+      value: "44"
     - name: Cookie
       value: ARRAffinity=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23; ARRAffinitySameSite=46bc5b3faa13dc4cc871a11946413f29994993170dc1668f4e3cbf7a3eeacd23
+      disabled: true
   body:
     type: json
     data: |-
       {
           "searchText": "", // Tên phiên, mã phiên, tên sản phẩm, mã sản phẩm
           "status": "UpcomingAndInProgress", // UpcomingAndInProgress | Upcoming | Ended | InProgress | Participating
-          "startDate": "2025-12-10",
+          "startDate": "2026-05-21",
           // "customerId": 14,
           "invitationSent": false // true | false 
       }

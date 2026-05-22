@@ -1,0 +1,7 @@
+info:
+  name: Đánh giá
+  type: folder
+  seq: 44
+
+request:
+  auth: inherit

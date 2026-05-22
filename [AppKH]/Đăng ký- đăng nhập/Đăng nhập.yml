@@ -16,10 +16,16 @@ http:
     type: json
     data: |2
        {
-          "account":"haukhachhang1",
+          "account":"hauphvnkhanghang2",
           "password":"123456",
           "TokenNofitication":"haukhachhang1"
        }
+
+      //
+
+      eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwicm9sZUlkIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiY3VzdG9tZXItMSIsImp0aSI6ImE3Njc0YTA4LTZhNTItNDU0MC1hYTVlLWI3NmQzZGJiMDNhMCIsImFjY291bnQiOiJoYXVraGFjaGhhbmcxIiwiZXhwIjoxNzgxOTIxNTEyfQ.RdYkOT0xCbGKxa_vXhXYzsc864AU5A2-6juaw3ZEljU
+
+      // eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NCIsInJvbGVJZCI6IjQ0IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiJjdXN0b21lci00NCIsImp0aSI6IjI0YTUwZDg2LTJkMDYtNDQwNi04YTJjLWMzMGIxMDFhMjE2YiIsImFjY291bnQiOiJoYXVwaHZua2hhbmdoYW5nMiIsImV4cCI6MTc4MTkyMTYwMn0.7PGKmfhhfB1D6XMlwrHWx29kCWv29DKZ09yvIwycIGk
   auth:
     type: bearer
     token: "{{token}}"

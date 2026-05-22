@@ -1,0 +1,31 @@
+info:
+  name: Lấy danh sách
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/AppFeedback/GetList"
+  headers:
+    - name: x-api-key
+      value: "{{apiKey}}"
+    - name: userIdLogin
+      value: "182"
+  body:
+    type: json
+    data: |-
+      {
+        "FromDate": "2026-05-01",
+        "ToDate": "2026-05-30",
+        "Emotion": "", //'Good', 'Neutral', 'Bad'
+        "FeatureId":5,// option
+        "PageNumber": 1,
+        "PageSize": 10,
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
