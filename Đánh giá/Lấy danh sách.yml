@@ -18,7 +18,7 @@ http:
         "FromDate": "2026-05-01",
         "ToDate": "2026-05-30",
         "Emotion": "", //'Good', 'Neutral', 'Bad'
-        "FeatureId":5,// option
+        //"FeatureId":5,// option
         "PageNumber": 1,
         "PageSize": 10,
       }

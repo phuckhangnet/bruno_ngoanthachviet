@@ -11,11 +11,13 @@ http:
       value: "{{apiKey}}"
     - name: userIdLogin
       value: "1"
+    - name: landCode
+      value: en-US
   body:
     type: json
     data: |-
       {
-          "SearchText": "sướng",
+          "SearchText": "",
           "PageNumber": 1,
           "PageSize": 100,
           // "RoleCode":"LIFEGUARD"

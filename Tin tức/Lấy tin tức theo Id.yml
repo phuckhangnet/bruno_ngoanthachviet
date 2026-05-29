@@ -13,6 +13,7 @@ http:
       value: "182"
     - name: langCode
       value: zh-CN
+      disabled: true
   body:
     type: json
     data: |-

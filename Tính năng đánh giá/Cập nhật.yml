@@ -15,7 +15,7 @@ http:
     type: json
     data: |-
       {
-        "Name": "Tính năng chọn ngôn ngữ cập nhật nè 4", 
+        "Name": "Tính năng chọn ngôn ngữ cập nhật 4", 
         "Id":4,
         "Status":"Active", // Active, Inactive
       }

@@ -12,7 +12,7 @@ http:
     - name: userIdLogin
       value: "182"
     - name: langCode
-      value: vi-VN
+      value: en-US
   body:
     type: json
     data: |-

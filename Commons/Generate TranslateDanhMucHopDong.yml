@@ -1,11 +1,11 @@
 info:
-  name: Generate ThoiGianBaoHanh
+  name: Generate TranslateDanhMucHopDong
   type: http
-  seq: 12
+  seq: 21
 
 http:
   method: POST
-  url: "{{url}}/Common/TranslateThoiGianBaoHanh"
+  url: "{{url}}/Common/TranslateDanhMucHopDong"
   headers:
     - name: x-api-key
       value: "{{apiKey}}"

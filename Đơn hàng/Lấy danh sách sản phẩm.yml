@@ -11,6 +11,8 @@ http:
       value: "{{apiKey}}"
     - name: userIdLogin
       value: "182"
+    - name: langCode
+      value: en-US
   body:
     type: json
     data: |-

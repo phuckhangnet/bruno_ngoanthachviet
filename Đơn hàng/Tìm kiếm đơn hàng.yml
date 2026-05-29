@@ -13,12 +13,13 @@ http:
     type: json
     data: |-
       {
-          "loai": 0,
-          "tungay": "2025-09-01",
-          "denngay": "2025-11-26",
-          "idnguoidung": 4,
-          "idcuahang": 1,
-          "chuoitimkiem": ""
+        "loai": 0,
+        "tungay": "2026-03-01",
+        "denngay": "2026-06-26",
+      //   "idnguoidung": 4,
+        "chuoitimkiem": "",
+        "pageNumber": 1,
+        "pageSize": 10
       }
   auth: inherit
 
