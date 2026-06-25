@@ -17,9 +17,9 @@ http:
     type: json
     data: |-
       {
-        "title": "Hau  test start 1",
-        "startTime": "2025-12-12 17:52:00",
-        "endTime":"2025-12-12 18:59:00",
+        "title": "Phiên đấu giá đá thiên nhiên 1",
+        "startTime": "2026-06-16 15:15:00",
+        "endTime":"2026-06-16 15:30:00",
         "hostUserId1": 5,
         "hostUserId2": 2,
         "products": [

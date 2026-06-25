@@ -17,7 +17,7 @@ http:
     type: json
     data: |-
       {
-          "AuctionItemId": 1090
+          "AuctionItemId": 1485
       }
   auth: inherit
 
